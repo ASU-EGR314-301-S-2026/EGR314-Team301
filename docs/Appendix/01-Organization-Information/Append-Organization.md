@@ -28,7 +28,7 @@ _Table #: Project Roles and Duties_
 | :------- | :----------------------------- | :------------------------------ | :----------------------------- |
 | Rylee    | Text                           | Email                           | Phone                          |
 | Member 2 |                                |                                 |                                |
-| Member 3 |                                |                                 |                                |
+| Hattie | Text                               | Email                                | Discord                               |
 | Member 4 |                                |                                 |                                |
 | Member 5 |                                |                                 |                                |
 
