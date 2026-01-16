@@ -27,8 +27,8 @@ _Table #: Project Roles and Duties_
 | **Name** | **First Choice Communication** | **Second Choice Communication** | **Third Choice Communication** |
 | :------- | :----------------------------- | :------------------------------ | :----------------------------- |
 | Rylee    | Text                           | Email                           | Phone                          |
-| Member 2 |                                |                                 |                                |
-| Hattie | Text                               | Email                                | Discord                               |
+| Bryce    | Text                           | Discord                         | Phone                          |
+| Hattie   | Text                           | Email                           | Discord                        |
 | Member 4 |                                |                                 |                                |
 | Member 5 |                                |                                 |                                |
 
