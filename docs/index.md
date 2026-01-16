@@ -27,7 +27,7 @@ Kevin Nichols<br>
 | **Team Member**        |**Ind Datasheet Links** |
 | ---------------------- | -----------------------|
 | Rylee Wirt             | [rmwirt-source.GitHub](https://rmwirt-source.github.io/EGR314DataSheet/) |
-| Bryce Weber            | [cottagefox.github.io](https://cottagefox.github.io/EGR314DataSheet/) | 
+| Bryce Weber            | [cottagefox.github.io](https://cottagefox.github.io/EGR314DataSheet/)    | 
 | Name #3                | link |
 | Name #4                | link |
 | Name #5                | link |
