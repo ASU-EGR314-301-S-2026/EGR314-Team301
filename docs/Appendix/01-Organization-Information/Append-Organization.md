@@ -37,8 +37,6 @@ We have decided that Hattie Lee will be the main point of contact with our instr
 
 ### Meeting Schedule and Coordiation
 
->Your team should identify common times for meeting every week. If you are not meeting weekly, your team's chances of success this semester are low
-
 **Table 3**: Weekly Schedule
 
 | Time     | Monday | Tuesday | Wednesday | Thursday | Friday | 
@@ -46,15 +44,15 @@ We have decided that Hattie Lee will be the main point of contact with our instr
 | 8:00 AM  | -      | -       | -         | -        | -      | 
 | 9:00 AM  | RW     | RW      | RW        | RW       | RW     | 
 | 10:00 AM | -      | RW      | -         | RW       | RW     | 
-| 11:00 AM | -      | RW      | -         | RW       | RW     |
-| 12:00 PM | -      | RW      | -         | RW       | RW     | 
-| 1:00 PM  | -      | RW      | -         | RW       | RW     | 
-| 2:00 PM  | RW     | RW      | RW        | RW       | RW     | 
-| 3:00 PM  | RW     | RW      | RW        | RW       | RW     |
-| 4:00 PM  | -      | -       | -         | -        | RW     | 
-| 5:00 PM  | -      | -       | -         | -        | RW     | 
-| 6:00 PM  | RW     | RW      | RW        | RW       | RW     | 
-| 7:00 PM  | RW     | RW      | RW        | RW       | RW     | 
+| 11:00 AM | -      | RW      | -         | RW       | RW,HL     |
+| 12:00 PM | -      | RW      | -         | RW       | RW,HL     | 
+| 1:00 PM  | -      | RW      | -         | RW       | RW,HL     | 
+| 2:00 PM  | RW     | RW      | RW        | RW       | RW,HL     | 
+| 3:00 PM  | RW,HL     | RW,HL      | RW,HL        | RW,HL       | RW,HL     |
+| 4:00 PM  | HL      |  HL       | HL         | HL        | RW,HL     | 
+| 5:00 PM  | HL      | HL       | HL         | HL        | RW,HL     | 
+| 6:00 PM  | RW,HL     | RW,HL      | RW,HL        | RW,HL       | RW,HL     | 
+| 7:00 PM  | RW,HL     | RW,HL      | RW,HL        | RW,HL       | RW,HL     | 
 
 _**Table Legend for Appendix Table 3**_
 
@@ -62,7 +60,7 @@ _**Table Legend for Appendix Table 3**_
 | ----- | :------: |
 | Rylee | RW |
 | Member 2 | - |
-| Member 3 | - |
+| Hattie | HL |
 | Member 4 | - |
 |Member 5 | - |
 
