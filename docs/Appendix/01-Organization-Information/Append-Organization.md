@@ -39,7 +39,7 @@ We have decided that Hattie Lee will be the main point of contact with our instr
 
 >Your team should identify common times for meeting every week. If you are not meeting weekly, your team's chances of success this semester are low
 
-_**Table 3**: Weekly Schedule
+**Table 3**: Weekly Schedule
 
 | Time     | Monday | Tuesday | Wednesday | Thursday | Friday | 
 | :------: | :----: | :----:  | :----:    | :----:   | :----: | 
