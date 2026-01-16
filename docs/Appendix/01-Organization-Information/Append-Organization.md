@@ -44,15 +44,15 @@ We have decided that Hattie Lee will be the main point of contact with our instr
 | 8:00 AM  | -      | -       | -         | -        | -      | 
 | 9:00 AM  | RW     | RW      | RW        | RW       | RW     | 
 | 10:00 AM | -      | RW      | -         | RW       | RW     | 
-| 11:00 AM | -      | RW      | -         | RW       | RW,HL     |
-| 12:00 PM | -      | RW      | -         | RW       | RW,HL     | 
-| 1:00 PM  | -      | RW      | -         | RW       | RW,HL     | 
-| 2:00 PM  | RW     | RW      | RW        | RW       | RW,HL     | 
-| 3:00 PM  | RW,HL     | RW,HL      | RW,HL        | RW,HL       | RW,HL     |
-| 4:00 PM  | HL      |  HL       | HL         | HL        | RW,HL     | 
-| 5:00 PM  | HL      | HL       | HL         | HL        | RW,HL     | 
-| 6:00 PM  | RW,HL     | RW,HL      | RW,HL        | RW,HL       | RW,HL     | 
-| 7:00 PM  | RW,HL     | RW,HL      | RW,HL        | RW,HL       | RW,HL     | 
+| 11:00 AM | -      | RW      | -         | RW       | RW HL     |
+| 12:00 PM | -      | RW      | -         | RW       | RW HL     | 
+| 1:00 PM  | -      | RW      | -         | RW       | RW HL     | 
+| 2:00 PM  | RW     | RW      | RW        | RW       | RW HL     | 
+| 3:00 PM  | RW HL     | RW HL      | RW HL        | RW HL       | RW HL     |
+| 4:00 PM  | HL      |  HL       | HL         | HL        | RW HL     | 
+| 5:00 PM  | HL      | HL       | HL         | HL        | RW HL     | 
+| 6:00 PM  | RW HL     | RW HL      | RW HL        | RW HL       | RW HL     | 
+| 7:00 PM  | RW HL     | RW HL      | RW HL        | RW HL       | RW HL     | 
 
 _**Table Legend for Appendix Table 3**_
 
