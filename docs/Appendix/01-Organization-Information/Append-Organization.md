@@ -4,9 +4,7 @@ title: Appendix - Extra Team Organization Information
 
 ## Roles & Responsibilities
 
->Define the roles and responsibilities that will be filled by the team members as you work to achieve your team mission. The table below is an example of some roles that each team should have; as you organize your team, you may identify other roles that would help your team successfully fulfill the team mission. ***See assignment for more details.***
-
-_Table #: Project Roles and Duties_
+_Table 1: Project Roles and Duties_
 
 | **Role**               | **Duties**                                                                                                                                | **Name**      |
 | :--------------------- | :---------------------------------------------------------------------------------------------------------------------------------------- | :------------ |
@@ -20,9 +18,7 @@ _Table #: Project Roles and Duties_
 
 ### Team Communication Method
 
->This is an area where teams often get into trouble. You should specific the channel(s)/method(s) for the team communication along with notes on the expectation in responce time.
-
-*Table #: Team Members' Prefered Communication Modes*
+*Table 2: Team Members' Prefered Communication Modes*
 
 | **Name** | **First Choice Communication** | **Second Choice Communication** | **Third Choice Communication** |
 | :------- | :----------------------------- | :------------------------------ | :----------------------------- |
@@ -43,18 +39,38 @@ We have decided that Hattie Lee will be the main point of contact with our instr
 
 >Your team should identify common times for meeting every week. If you are not meeting weekly, your team's chances of success this semester are low
 
-Our team will meet
+_**Table 3**: Weekly Schedule
 
-* Team will meet ...
-* It with be a ...(face-to-face or virtually)... type of meeting.
-* Reminders for the meetings will be by ....
-* Changes to this schedule will be ....
-* Accountability issuse will .....
-* For records of accountablity will be noted in the minutes... 
+| Time     | Monday | Tuesday | Wednesday | Thursday | Friday | 
+| :------: | :----: | :----:  | :----:    | :----:   | :----: | 
+| 8:00 AM  | -      | -       | -         | -        | -      | 
+| 9:00 AM  | RW     | RW      | RW        | RW       | RW     | 
+| 10:00 AM | -      | RW      | -         | RW       | RW     | 
+| 11:00 AM | -      | RW      | -         | RW       | RW     |
+| 12:00 PM | -      | RW      | -         | RW       | RW     | 
+| 1:00 PM  | -      | RW      | -         | RW       | RW     | 
+| 2:00 PM  | RW     | RW      | RW        | RW       | RW     | 
+| 3:00 PM  | RW     | RW      | RW        | RW       | RW     |
+| 4:00 PM  | -      | -       | -         | -        | RW     | 
+| 5:00 PM  | -      | -       | -         | -        | RW     | 
+| 6:00 PM  | RW     | RW      | RW        | RW       | RW     | 
+| 7:00 PM  | RW     | RW      | RW        | RW       | RW     | 
+
+_**Table Legend for Appendix Table 3**_
+
+| Name | Abbreviation |
+| ----- | :------: |
+| Rylee | RW |
+| Member 2 | - |
+| Member 3 | - |
+| Member 4 | - |
+|Member 5 | - |
+
+Our team will meet face-to-face when possible and if needed virtually. The team's meeting leader will discuss with team members about when to meet and send reminders of when the meeting is the day of the meeting. If a member does not show up to the meeting without notice we will call and check in with that member.
 
 ### Team Coordination & Accountability
 
-Our assignments will be submitted by our quality control leader 
+Our assignments will be submitted by our quality control leader Hattie. 
 * Assignments are submitted ....
 * To Ensure that each team member has the knowledge and skill required, the team will ......
 * Feedback is to and acted on ....
