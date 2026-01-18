@@ -6,9 +6,12 @@ tags:
 
 ## Team Charter
 
-> "ASU is a comprehensive public research university, measured not by whom it excludes, but by whom it includes and how they succeed; advancing research and discovery of public value; and assuming fundamental responsibility for the economic, social, cultural and overall health of the communities it serves." (ASU's Charter)
+Our team of ASU student engineers is committed to collaboration, creativity, and the application of technical knowledge. Using GitHub, electrical components, and hands-on system design, we will deliver a functional portfolio-worthy product that reflects our engineering growth.
 
 The team came about this team charter ....(add in your words datails on why this is your team's charter)
+idk maybe something like:
+The team created this charter to define our shared values and goals for delivering a creative, demonstrable, and semi-functional product.
+
 
 ## Product Mission Statement
 
