@@ -10,7 +10,7 @@ _Table 1: Project Roles and Duties_
 | :--------------------- | :---------------------------------------------------------------------------------------------------------------------------------------- | :------------ |
 | Meeting leader         | Schedules team meetings, creates and distributes an agenda for each meeting, and runs each meeting                                        | Rylee         |
 | Meeting recorder       | Takes minutes of each team meeting, including attendance, and records action items and to whom they are assigned                          | Bryce         |
-| Assignment leader      | Coordinates the team's work on a given assignment to Canvas before the due date                                                           | Member 3      |
+| Assignment leader      | Coordinates the team's work on a given assignment to Canvas before the due date                                                           | Riley      |
 | Project monitor        | Tracks the team's progress relative to the project schedule (Gantt chart) and keeps team members apprised of deadlines and project status | Member 4      |
 | Quality control leader | Ensures the work the team does fulfills the rubric and the vision for our product                                                         | Hattie        |
 
@@ -25,7 +25,7 @@ _Table 1: Project Roles and Duties_
 | Rylee    | Text                           | Email                           | Phone                          |
 | Bryce    | Text                           | Discord                         | Phone                          |
 | Hattie   | Text                           | Email                           | Discord                        |
-| Member 4 |                                |                                 |                                |
+| Riley    | Text                           | Discord                         | Email                          |
 | Member 5 |                                |                                 |                                |
 
 ### Communication Procedures
@@ -43,16 +43,16 @@ We have decided that Hattie Lee will be the main point of contact with our instr
 | :------: | :----: | :----:  | :----:    | :----:   | :----: | 
 | 8:00 AM  | -      | -       | -         | -        | -      | 
 | 9:00 AM  | RW     | RW      | RW        | RW       | RW     | 
-| 10:00 AM | -      | RW      | -         | RW       | RW     | 
-| 11:00 AM | -      | RW      | -         | RW       | RW HL     |
-| 12:00 PM | -      | RW      | -         | RW       | RW HL     | 
-| 1:00 PM  | -      | RW      | -         | RW       | RW HL     | 
-| 2:00 PM  | RW     | RW      | RW        | RW       | RW HL     | 
-| 3:00 PM  | RW HL     | RW HL      | RW HL        | RW HL       | RW HL     |
-| 4:00 PM  | HL      |  HL       | HL         | HL        | RW HL     | 
-| 5:00 PM  | HL      | HL       | HL         | HL        | RW HL     | 
-| 6:00 PM  | RW HL     | RW HL      | RW HL        | RW HL       | RW HL     | 
-| 7:00 PM  | RW HL     | RW HL      | RW HL        | RW HL       | RW HL     | 
+| 10:00 AM | -      | RW RF   | -         | RW  RF     | RW     | 
+| 11:00 AM | -      | RW RF     | -         | RW  RF     | RW HL     |
+| 12:00 PM | -      | RW RF     | -         | RW  RF     | RW HL     | 
+| 1:00 PM  | -      | RW      | -         | RW      | RW HL     | 
+| 2:00 PM  | RW     | RW      | RW  RF      | RW       | RW HL     | 
+| 3:00 PM  | RW HL     | RW HL RF  | RW HL RF    | RW HL RF     | RW HL     |
+| 4:00 PM  | HL      |  HL RF      | HL  RF     | HL RF       | RW HL     | 
+| 5:00 PM  | HL      | HL RF      | HL   RF      | HL  RF      | RW HL     | 
+| 6:00 PM  | RW HL     | RW HL RF     | RW HL RF       | RW HL       | RW HL     | 
+| 7:00 PM  | RW HL RF    | RW HL RF     | RW HL RF       | RW HL       | RW HL     | 
 
 _**Table Legend for Appendix Table 3**_
 
@@ -61,7 +61,7 @@ _**Table Legend for Appendix Table 3**_
 | Rylee | RW |
 | Member 2 | - |
 | Hattie | HL |
-| Member 4 | - |
+| Riley | RF |
 |Member 5 | - |
 
 Our team will meet face-to-face when possible and if needed virtually. The team's meeting leader will discuss with team members about when to meet and send reminders of when the meeting is the day of the meeting. If a member does not show up to the meeting without notice we will call and check in with that member.
