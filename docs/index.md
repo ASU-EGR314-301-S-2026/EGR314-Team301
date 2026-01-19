@@ -30,4 +30,4 @@ Kevin Nichols<br>
 | Bryce Weber            | [cottagefox.github.io](https://cottagefox.github.io/EGR314DataSheet/)    | 
 | Hattie Lee             | [jhlee59.github.io](https://jhlee59.github.io/EGR314-Datasheet/) |
 | Riley Franco                | [riatron8.github.io](https://riatron8.github.io/EGR314IndividualDataSheet/) |
-| Name #5                | link |
+| Tim Desanti               | [tjdesanti.github.io](https://tjdesanti.github.io/) |
