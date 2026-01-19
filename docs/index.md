@@ -29,5 +29,5 @@ Kevin Nichols<br>
 | Rylee Wirt             | [rmwirt-source.GitHub](https://rmwirt-source.github.io/EGR314DataSheet/) |
 | Bryce Weber            | [cottagefox.github.io](https://cottagefox.github.io/EGR314DataSheet/)    | 
 | Hattie Lee             | [jhlee59.github.io](https://jhlee59.github.io/EGR314-Datasheet/) |
-| Name #4                | link |
+| Riley Franco                | [riatron8.github.io](https://riatron8.github.io/EGR314IndividualDataSheet/) |
 | Name #5                | link |
