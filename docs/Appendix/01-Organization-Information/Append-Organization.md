@@ -68,15 +68,9 @@ Our team will meet face-to-face when possible and if needed, virtually. The team
 
 ### Team Coordination & Accountability
 
-Our assignments will be submitted by our quality control leader, Hattie. 
-* Assignments are submitted ....
-* To Ensure that each team member has the knowledge and skill required, the team will ......
-* Feedback is to and acted on ....
-* Missed contributions/assignments/actions will be ...
-* Hold one another accountable to the expectations described in this charter.
-* Recognize that a team member is underperforming.
-* Help an underperforming team member improve.
-* What are the consequences if an underperforming team member does not improve (e.g., pink slip)?
+All assignments will be submitted to Canvas by our quality control leader, Hattie, and will include team and/or individual GitHub links as required. The team will collaborate during labs and assignments to ensure everyone understands the material and stays aligned, seeking help from teaching assistants and the professor during labs and attending office hours when needed. Feedback will be reviewed and addressed by both individuals and the team to ensure quality work and on-time submissions.
+
+Missed contributions or responsibilities will be noted and discussed as necessary, and team members will hold one another to the expectations outlined in this charter. If a member is underperforming, the team will recognize the issue, create a plan to support improvement, and help them catch up. Continued lack of improvement may result in a pink slip or a meeting with the professor and the team.
 
 #### Conflict Recognition & Resolution
 
