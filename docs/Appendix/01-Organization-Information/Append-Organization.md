@@ -74,4 +74,6 @@ Missed contributions or responsibilities will be noted and discussed as necessar
 
 #### Conflict Recognition & Resolution
 
-> List the steps and means of documenting issues that lead to involving the instructor in a "Pink Slip" processor. It is best to be **proactive** in resolving these issues early in the semester!
+Any minor conflicts that can be solved through typical communication channels should be handled through text or face to face conversations. Disagreements relating to how to complete assignments, such as formatting, what components to include in the final project, and so on will be decided by a vote, in which the proposal with the most votes will be accepted. If a conflict has been ongoing continuously for a period of two weeks without resolution, or a majority of the team believes an assignment will not be successfully completed, the team members can raise that issue to the professor.
+
+If a member of the team is not performing their duties, and attempts have been made by the team to inform and allow the team member to improve, the team may choose to issue a pink slip or raise the issue to the professor. If this is done, communications with the member, edit logs on the github repository, and changes made in google documents should be provided to show an attempt by the team to aid the team member in improving their participation, and the lack of improvement by the team member.
