@@ -43,23 +43,23 @@ We have decided that Hattie Lee will be the main point of contact with our instr
 | :------: | :----: | :----:  | :----:    | :----:   | :----: | 
 | 8:00 AM  | -      | -       | -         | -        | -      | 
 | 9:00 AM  | RW     | RW      | RW        | RW       | RW     | 
-| 10:00 AM | -      | RW RF   | -         | RW  RF     | RW     | 
-| 11:00 AM | -      | RW RF  TD   | -         | RW  RF TD    | RW HL  TD   |
-| 12:00 PM | -      | RW RF  TD   | -         | RW  RF TD    | RW HL TD    | 
-| 1:00 PM  | -      | RW   TD   | -         | RW  TD   | RW HL     | 
-| 2:00 PM  | RW     | RW  TD    | RW  RF      | RW  TD     | RW HL     | 
-| 3:00 PM  | RW HL TD  | RW HL RF  | RW HL RF  TD  | RW HL RF     | RW HL  TD   |
-| 4:00 PM  | HL TD    |  HL RF      | HL  RF  TD   | HL RF       | RW HL  TD   | 
-| 5:00 PM  | HL  TD    | HL RF      | HL   RF   TD   | HL  RF      | RW HL TD    | 
-| 6:00 PM  | RW HL  TD   | RW HL RF TD    | RW HL RF  TD     | RW HL TD      | RW HL  TD   | 
-| 7:00 PM  | RW HL RF TD   | RW HL RF TD   | RW HL RF  TD     | RW HL  TD     | RW HL  TD   | 
+| 10:00 AM | -      | RW RF   | -         | RW  RF     | RW BW    | 
+| 11:00 AM | -      | RW RF TD   | -         | RW  RF TD    | RW HL TD BW  |
+| 12:00 PM | -      | RW RF TD   | -         | RW  RF TD    | RW HL TD BW   | 
+| 1:00 PM  | -      | RW TD   | -         | RW  TD   | RW HL BW    | 
+| 2:00 PM  | RW     | RW TD    | RW  RF      | RW  TD     | RW HL     | 
+| 3:00 PM  | RW HL TD BW | RW HL RF BW | RW HL RF TD  | RW HL RF BW    | RW HL  TD   |
+| 4:00 PM  | HL TD BW    |  HL RF BW     | HL RF TD BW  | HL RF BW      | RW HL  TD   | 
+| 5:00 PM  | HL TD BW   | HL RF BW     | HL RF TD BW  | HL RF BW     | RW HL TD    | 
+| 6:00 PM  | RW HL TD BW  | RW HL RF TD BW   | RW HL RF TD BW    | RW HL TD BW     | RW HL  TD   | 
+| 7:00 PM  | RW HL RF TD BW  | RW HL RF TD BW  | RW HL RF TD BW    | RW HL TD BW    | RW HL  TD   | 
 
 _**Table Legend for Appendix Table 3**_
 
 | Name | Abbreviation |
 | ----- | :------: |
 | Rylee | RW |
-| Member 2 | - |
+| Bryce | BW |
 | Hattie | HL |
 | Riley | RF |
 | Tim | TD |
