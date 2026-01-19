@@ -30,7 +30,7 @@ _Table 1: Project Roles and Duties_
 
 ### Communication Procedures
 
-Our team agreed upon using text messaging to communicate about our project. It is expected that we will respond to each other when it is the next convenient time to the person as well as within a reasonable amount of time.
+Our team agreed upon using text messaging to communicate about our project. It is expected that we will respond to each other when it is the next convenient time to the person as well as within a reasonable amount of time. The times our team is completely free on Tuesday and Wednesday at 6 & 7 pm in the Library. To remind everyone of meetings, Rylee will send out a text that day or the day before.  
 
 We have decided that Hattie Lee will be the main point of contact with our instructor and will relay information back to us by text message or, if needed, by forwarding the email to all of us.
 
