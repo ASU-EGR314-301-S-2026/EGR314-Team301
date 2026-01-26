@@ -117,3 +117,109 @@ The intended audience for this device is researchers and field technicians worki
 |  | Use subtle terrain cues | This option helps prioritize clear interaction flow by using use subtle terrain cues to make the interaction feel clearer and more intuitive for users. |
 |  | Layered feedback | This concept focuses on clear interaction flow by using layered feedback to make the interaction feel clearer and more intuitive for users. |
 |  | End of use summary | This approach highlights clear interaction flow by using end of use summary to make the interaction feel clearer and more intuitive for users. |
+
+
+## Ranked and Sorted Brainstorming
+
+| Category | Rank | Item |
+|---|---:|---|
+| Aesthetics & Personality & Emotional Design | 1 | Look cute & friendly |
+| Aesthetics & Personality & Emotional Design | 2 | Cute charging station |
+| Audio Output & Sound Feedback | 1 | Speaker |
+| Audio Output & Sound Feedback | 2 | Buzzer |
+| Audio Output & Sound Feedback | 3 | Headset |
+| Audio Output & Sound Feedback | 4 | Audio instructions |
+| Audio Output & Sound Feedback | 5 | Built in narration |
+| Audio Output & Sound Feedback | 6 | Bell |
+| Cognitive Load & Interaction Design Principles | 1 | Being clear with robot purpose |
+| Cognitive Load & Interaction Design Principles | 2 | End of use summary |
+| Cognitive Load & Interaction Design Principles | 3 | Step based interaction |
+| Cognitive Load & Interaction Design Principles | 4 | Layered feedback |
+| Cognitive Load & Interaction Design Principles | 5 | Cause & effect emphasis |
+| Cognitive Load & Interaction Design Principles | 6 | Only do things that emphasize the primary task |
+| Cognitive Load & Interaction Design Principles | 7 | Use subtle terrain cues |
+| Computing Devices & Platforms | 1 | Phone |
+| Computing Devices & Platforms | 2 | Tablet |
+| Computing Devices & Platforms | 3 | Nintendo Switch |
+| Computing Devices & Platforms | 4 | 3D printer |
+| Connectivity & Software & Digital Interfaces | 1 | App |
+| Connectivity & Software & Digital Interfaces | 2 | Website |
+| Connectivity & Software & Digital Interfaces | 3 | QR code |
+| Connectivity & Software & Digital Interfaces | 4 | Send notifications to phone |
+| Connectivity & Software & Digital Interfaces | 5 | AI controlled |
+| Connectivity & Software & Digital Interfaces | 6 | Voice controlled |
+| Connectivity & Software & Digital Interfaces | 7 | Personal assistant software (like Alexa & Siri) |
+| Connectivity & Software & Digital Interfaces | 8 | One way connection |
+| Connectivity & Software & Digital Interfaces | 9 | Airdrop |
+| Connectivity & Software & Digital Interfaces | 10 | Autonomous |
+| Ergonomics & Human Comfort | 1 | Easy to reach components |
+| Ergonomics & Human Comfort | 2 | Anti-slip |
+| Ergonomics & Human Comfort | 3 | Comfy controller shape |
+| Ergonomics & Human Comfort | 4 | Somewhat quiet |
+| Ergonomics & Human Comfort | 5 | Ensure controls are far enough apart |
+| Ergonomics & Human Comfort | 6 | Cup holder |
+| Input Devices & Controllers | 1 | Gaming Controller |
+| Input Devices & Controllers | 2 | Keyboard |
+| Input Devices & Controllers | 3 | Custom controller |
+| Input Devices & Controllers | 4 | Steering wheel |
+| Input Devices & Controllers | 5 | Switches |
+| Input Devices & Controllers | 6 | Mouse |
+| Input Devices & Controllers | 7 | TV remote |
+| Input Devices & Controllers | 8 | Flight simulator |
+| Instruction & Guidance & Learning Support | 1 | Tell them how to operate it |
+| Instruction & Guidance & Learning Support | 2 | Tell them what it does |
+| Instruction & Guidance & Learning Support | 3 | Pictures |
+| Instruction & Guidance & Learning Support | 4 | Keep mental load to a minimum |
+| Instruction & Guidance & Learning Support | 5 | Instruction manual |
+| Instruction & Guidance & Learning Support | 6 | Pictured instructions (ex Lego) |
+| Instruction & Guidance & Learning Support | 7 | Labelling |
+| Instruction & Guidance & Learning Support | 8 | Important stuff at start |
+| Instruction & Guidance & Learning Support | 9 | Break things up when possible |
+| Instruction & Guidance & Learning Support | 10 | Trial test instructions |
+| Instruction & Guidance & Learning Support | 11 | Demonstrations |
+| Instruction & Guidance & Learning Support | 12 | Virtual labels |
+| Instruction & Guidance & Learning Support | 13 | Minimize instructions |
+| Instruction & Guidance & Learning Support | 14 | Simple terms |
+| Instruction & Guidance & Learning Support | 15 | Video & walkthrough |
+| Instruction & Guidance & Learning Support | 16 | Braille instructions |
+| Physical Design & Structure & Materials | 1 | Pool noodles & bumpers |
+| Physical Design & Structure & Materials | 2 | Locktight & nylocks |
+| Physical Design & Structure & Materials | 3 | Not making it top heavy |
+| Physical Design & Structure & Materials | 4 | Physical constraints |
+| Physical Design & Structure & Materials | 5 | Smooth edges |
+| Physical Design & Structure & Materials | 6 | PCB boards |
+| Physical Design & Structure & Materials | 7 | Flat |
+| Physical Design & Structure & Materials | 8 | Steel |
+| Physical Design & Structure & Materials | 9 | Carbon fiber body |
+| Power & Accessories | 1 | Phone charger |
+| Power & Accessories | 2 | Laptop charger |
+| Safety & Reliability & Error Prevention | 1 | WiFi security & interfering users |
+| Safety & Reliability & Error Prevention | 2 | Only able to do one task at a time |
+| Safety & Reliability & Error Prevention | 3 | Error messaging |
+| Safety & Reliability & Error Prevention | 4 | Emergency stop button |
+| Safety & Reliability & Error Prevention | 5 | Panic button |
+| Safety & Reliability & Error Prevention | 6 | Input locking & once a user begins input no other controllers work |
+| Safety & Reliability & Error Prevention | 7 | Child-proof compartments |
+| Safety & Reliability & Error Prevention | 8 | One controller |
+| Safety & Reliability & Error Prevention | 9 | Limit ranges so it can't be flipped |
+| Safety & Reliability & Error Prevention | 10 | Auto reset |
+| Sensors & Environmental Awareness | 1 | Hall effect sensors |
+| Sensors & Environmental Awareness | 2 | Motion tracking camera |
+| Sensors & Environmental Awareness | 3 | Sensors to detect when error happens |
+| Sensors & Environmental Awareness | 4 | GPS |
+| Sensors & Environmental Awareness | 5 | Temperature sensors |
+| Sensors & Environmental Awareness | 6 | Gyroscope |
+| Sensors & Environmental Awareness | 7 | Magnet |
+| Sensors & Environmental Awareness | 8 | Goes toward certain smells (nose) |
+| Tactile & Physical & Multisensory Feedback | 1 | Textures |
+| Tactile & Physical & Multisensory Feedback | 2 | Scratch and sniffs |
+| Tactile & Physical & Multisensory Feedback | 3 | Buttons |
+| Visual Output & Visual Communication | 1 | Colors |
+| Visual Output & Visual Communication | 2 | Arrows |
+| Visual Output & Visual Communication | 3 | Patterns |
+| Visual Output & Visual Communication | 4 | Reflective tape |
+| Visual Output & Visual Communication | 5 | LED |
+| Visual Output & Visual Communication | 6 | Only show relevant displays |
+| Visual Output & Visual Communication | 7 | Make secondary elements smaller |
+| Visual Output & Visual Communication | 8 | Laser pointer |
+| Visual Output & Visual Communication | 9 | Light bulb |
