@@ -230,6 +230,8 @@ The intended audience for this device is researchers and field technicians worki
 ### Concept 1
 ![Concept 1](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/docs/02-Concept-Design/EGR314_Project_Concept_Idea_51.png)
 
+The exploration device is designed to meet the user’s needs by combining mobility, environmental awareness, and easy remote control, as shown in the concept image. The tracked base allows the robot to move over rough or uneven terrain, making it useful for exploring areas that may be unsafe or hard to reach. A built-in camera and motion sensors provide real-time visual feedback and detect obstacles, helping the user understand the environment and avoid collisions. Wireless communication allows the robot to receive commands from the controller and send video and sensor information back to the user’s screen. The project is divided among five teammates, with each member responsible for one key feature: one handles wireless communication between the robot and controller, one focuses on the screen and user controls, one manages the sensors and environmental detection, one controls the motors and tracked movement based on user input, and one manages power distribution to keep the system running reliably. Clear on-screen indicators, distance warnings, and a live camera feed make the device easy to use, while a familiar game-style controller helps reduce the learning curve. The rugged tracked design protects the components and improves durability, and only basic instruction is needed to operate the system safely and effectively.
+
 ### Concept 2
 ![Concept 2](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/docs/02-Concept-Design/EGR314_Project_Concept_Idea_Rover.png)
 
@@ -238,3 +240,12 @@ The features highlighted in the concept sketch meet our users' needs. The design
 ### Concept 3
 ![Concept 3](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/docs/02-Concept-Design/EGR314_Project_Concept_Idea_Tank.png)
 
+This rover meets the needs of exploration through three cameras and space for multiple sensors to collect data. LEDs are used to communicate the rover’s status, errors, and operating conditions, helping the user understand its current situation. The rover’s functionality is divided between its wheels, cameras, LEDs, body, and sensors, with a durable and comfortable form that supports regular use. The instructions will be accessible through QR codes and written in an effective way. 
+The charging station is divided into wiring, a protective body, and wheel holders with stoppers that guide the rover into place and hold it securely during charging. Guard reels support safe docking, and a sliding door houses the charging cable.
+The controller is designed to connect easily and function intuitively, using familiar joysticks, a D-pad, and physical buttons. Color cues and tactile feedback support comfortable operation and clear control. Instructions are provided through a QR code to allow quick understanding of basic operation, controls, and LED meanings.
+
+## Selected Concept
+
+![Concept 2](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/docs/02-Concept-Design/EGR314_Project_Concept_Idea_Rover.png)
+
+We decided to go with concept 2. It had a good balance of safety and functionality, while also having enough features to allow our team members to be able to each have a unique role in its construction. In addition, this design was the most feasible for our team to complete, with a fairly simple design, while still keeping a good variety of functionality. The controller for concept 2 is fairly simple, and will be easier to control the rover with than the other options. The various visual indicators and safety additions meant that the concpet would also be safer than the other options for presenting and operating. The concept was selected after a discussion with the team, reviewing the strengths and weaknesses of each design, where the majority of the team believed that concept 2 was the strongest idea for us to move forward. 
