@@ -223,3 +223,18 @@ The intended audience for this device is researchers and field technicians worki
 | Visual Output & Visual Communication | 7 | Make secondary elements smaller |
 | Visual Output & Visual Communication | 8 | Laser pointer |
 | Visual Output & Visual Communication | 9 | Light bulb |
+
+
+## Project Concepts
+
+### Concept 1
+![Concept 1](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/docs/02-Concept-Design/EGR314_Project_Concept_Idea_51.png)
+
+### Concept 2
+![Concept 2](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/docs/02-Concept-Design/EGR314_Project_Concept_Idea_Rover.png)
+
+The features highlighted in the concept sketch meet our users' needs. The design has smooth edges for safety. It has an emergency stop button in case of failure. There is a buzzer and LEDs for the rover to communicate with the user. It has a gyroscope and cameras so it can tell where it is and what is around it. The functionality will be split into 5 parts, with 2 people for motor control, 1 person for the steering wheel, 1 person for the hall effect sensor, and 1 person for the temperature sensor. This is all included in the circuits part of the design. The first cue is colors, so the user can clearly see which button to press without having to look for text. The on button will be green, and the off button will be red. There are also LEDs labeled to indicate what is happening inside the robot, and a buzzer in case of an error that will alarm the user. The robot is controlled by a steering wheel with forward and reverse triggers. There is a big stop button that will be a bright yellow with an exclamation point in the center. Finally, there are 2 D-Pads for more control if the user does not want to turn the steering wheel controller. The robot and controller will be made out of durable material, so they will last a long time. The edges of the robot will be smooth, so the user will not get hurt if they get run into by the robot. There will be a small booklet with simple step-by-step instructions, as well as a link to a video that explains in detail how to operate the robot.
+
+### Concept 3
+![Concept 3](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/docs/02-Concept-Design/EGR314_Project_Concept_Idea_Tank.png)
+
