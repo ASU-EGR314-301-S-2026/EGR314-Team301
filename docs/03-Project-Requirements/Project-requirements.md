@@ -38,5 +38,3 @@ title: Project Requirements
 | Camera System                    | Hattie        |
 | Temperature / Humidity Module    | Riley         |
 
-
-## Context
