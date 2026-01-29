@@ -29,4 +29,14 @@ title: Project Requirements
 | Charging Station                 | Can get to the charging station           | Starts charging without user input                                         | Y                    | Hattie          |
 | Non‑Sharp Corners                | Isn’t sharp                               | Won’t cut anyone who touches it                                            | Y                    | Tim, Bryce      |
 
+
+## What is each team member doing?
+| Module                           | Member        |
+|----------------------------------|---------------|
+| Controller                       | Rylee         |
+| Drivetrain / Body / Hall Effect  | Tim, Bryce    |
+| Camera System                    | Hattie        |
+| Temperature / Humidity Module    | Riley         |
+
+
 ## Context
