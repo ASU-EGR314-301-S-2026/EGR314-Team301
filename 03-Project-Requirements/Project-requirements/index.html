@@ -763,8 +763,9 @@
 <th>Requirement Description</th>
 <th>Measure of Threshold</th>
 <th>Target Measure</th>
-<th>Stretch Requirement</th>
-<th>Team Member</th>
+<th>Stretch Requirement (Y/N)</th>
+<th>Team Member(s)</th>
+<th>Context</th>
 </tr>
 </thead>
 <tbody>
@@ -774,20 +775,23 @@
 <td>Have a good range</td>
 <td>N</td>
 <td>Hattie</td>
+<td>In order for the rover to be able to give visual feedback to the operator, so that the operator can reliably control it, it needs a camera to see where it is going.</td>
 </tr>
 <tr>
-<td>Surface Mounted Microcontroller</td>
+<td>Surface mounted microcontroller</td>
 <td>1 PIC or ESP</td>
-<td>8‑bit ESP</td>
-<td>Y</td>
+<td>8-bit ESP</td>
+<td>N</td>
 <td>Everyone</td>
+<td>In order to fulfill the class requirements and for the rover to be able to function, both for outputs like movement and for sensor inputs.</td>
 </tr>
 <tr>
 <td>ESP32</td>
 <td>Wifi</td>
 <td>Connect the robot to controller</td>
-<td>Y</td>
+<td>N</td>
 <td>Everyone</td>
+<td>In order to fulfill the class requirements we need to be able to connect to each other's modules wirelessly.</td>
 </tr>
 <tr>
 <td>LED</td>
@@ -795,27 +799,31 @@
 <td>They turn on when needed</td>
 <td>Y</td>
 <td>Everyone</td>
+<td>In order for the user to be able to know when the electronics are truly working we will be adding LED's to just about every part of the robot whether it's a status LED or error LED.</td>
 </tr>
 <tr>
 <td>Wireless Communication</td>
 <td>Have connection</td>
 <td>Have long distance connection</td>
-<td>Y</td>
+<td>N</td>
 <td>Rylee</td>
+<td>In order for this rover to be a true exploration device, it needs to have the ability to be controlled wirelessly.</td>
 </tr>
 <tr>
 <td>Motors</td>
 <td>Moves entire body</td>
-<td>Does not overheat quickly due to load</td>
+<td>Does not overheat quick due to load</td>
 <td>N</td>
 <td>Tim, Bryce</td>
+<td>In order to allow the rover to move around, and allow it to function as a rover, it needs motors to produce the rotational motion for its treads.</td>
 </tr>
 <tr>
-<td>Body to Hold All Components</td>
+<td>Body to hold all components</td>
 <td>Keeps components in place</td>
 <td>Sturdy enough to protect components</td>
 <td>N</td>
 <td>Tim, Bryce</td>
+<td>In order for the rover to have a solid foundation and a place to keep and protect all of the electronics and other things that it may require within it, it will have a solid but lightweight body to minimize the amount of electricity used while also keeping our electronics secure.</td>
 </tr>
 <tr>
 <td>Battery</td>
@@ -823,69 +831,71 @@
 <td>Lasts more than 10 min</td>
 <td>N</td>
 <td>Rylee</td>
+<td>In order for the rover to really explore the environment that would be required without having to drag a cord behind it a battery will be fitted to the device, we want the battery to last a while in order to get to where it needs to go, see what it needs to see, and come back before running out of charge.</td>
 </tr>
 <tr>
-<td>Temperature Sensor</td>
+<td>Temperature sensor</td>
 <td>Detects overheating</td>
-<td>Reaches a certain reading to determine overheating</td>
+<td>When it reaches a certain reading to determine overheating</td>
 <td>N</td>
 <td>Riley</td>
+<td>In order to properly read the environment around the rover, it needs to be capable of measuring the ambient temperature around the rover.</td>
 </tr>
 <tr>
-<td>Hall Effect Sensor</td>
+<td>Hall effect sensor</td>
 <td>Measure increments on motor</td>
 <td>Detects magnetic fields and converts them into electrical signals</td>
 <td>N</td>
 <td>Tim, Bryce</td>
+<td>In order to know how far the tank treads have moved we have added hall effect sensors that will be able to tell the user how fast or slow the rover is moving.</td>
 </tr>
 <tr>
-<td>Humidity Sensor</td>
+<td>Humidity sensor</td>
 <td>Reads humidity</td>
 <td>Accuracy of humidity</td>
 <td>N</td>
 <td>Riley</td>
+<td>In order to properly read the environment around the rover, it needs to be capable of measuring the humidity.</td>
 </tr>
 <tr>
 <td>Controller</td>
 <td>Can control the robot</td>
-<td>Has a very good input‑to‑output speed</td>
+<td>Has a very good input to output speed</td>
 <td>N</td>
 <td>Rylee</td>
+<td>In order for the land rover to be able to do what the human wants with no coding experience, it will be controlled with a controller.</td>
 </tr>
 <tr>
-<td>Suspension</td>
-<td>Absorbs shock/impact</td>
-<td>Does not put high force on components; smooth driving</td>
-<td>N</td>
-<td>Tim, Bryce</td>
-</tr>
-<tr>
-<td>Tank Tread</td>
+<td>Tank tread</td>
 <td>What terrain can it handle</td>
-<td>Drivable on all terrain</td>
+<td>Driveable on all terrain</td>
 <td>N</td>
 <td>Tim, Bryce</td>
+<td>In order to allow the rover to move comfortably in uncontrolled environments, using treads gives the rover more grip and ground contact to keep it upright and mobile more reliably than wheels.</td>
 </tr>
 <tr>
-<td>Gears for Tank Tread</td>
+<td>Gears for tank tread</td>
 <td>Secures treads</td>
-<td>No slippage; keeps treads tight</td>
+<td>No slippage to keep treads tight</td>
 <td>N</td>
 <td>Tim, Bryce</td>
+<td>In order for the rover to be able to have a reliable amount of movement the tank treads will be tightened down enough so they don’t slip and get stuck in the environments they are exploring.</td>
 </tr>
 <tr>
 <td>Speaker</td>
-<td>Makes a sound</td>
+<td>Makes an inkling of a sound</td>
 <td>User can clearly hear it</td>
 <td>Y</td>
 <td>Rylee</td>
+<td>For user feedback the controller will be fitted with a speaker that will give audio alerts if an error or other certain phenomena occur.</td>
 </tr>
 <tr>
-<td>Distance Sensor</td>
+<td>Distance sensor</td>
 <td>Measure distance</td>
-<td>Senses when an object is too close and plays a sound</td>
+<td>Sense an object is too close and plays a sound</td>
 <td>Y</td>
 <td>Hattie</td>
+<td>In order for the rover to not run into things and potentially break we are adding a distance sensor.</td>
 </tr>
 <tr>
 <td>Servo</td>
@@ -893,6 +903,7 @@
 <td>Moves camera to any angle needed</td>
 <td>Y</td>
 <td>Hattie</td>
+<td>For maximum visibility we will be putting our camera on a servo so we can look at the environment around us more effectively.</td>
 </tr>
 <tr>
 <td>Reverse Camera</td>
@@ -900,27 +911,31 @@
 <td>Shows only when reversing</td>
 <td>Y</td>
 <td>Hattie</td>
+<td>To help the user navigate more effectively we are adding a camera at the back so reversing is possible.</td>
 </tr>
 <tr>
 <td>Motion Sensor</td>
 <td>Can sense motion</td>
-<td>Alerts user of motion and direction</td>
+<td>Alerts user of motion and what direction it was in</td>
 <td>Y</td>
-<td>Hattie</td>
+<td></td>
+<td>In order for the rover to be able to check for motion in an area, to determine if something around it is in motion without the user having to manually see it, it will have the rover alert the user of the movement.</td>
 </tr>
 <tr>
 <td>Charging Station</td>
 <td>Can get to the charging station</td>
-<td>Starts charging without user input</td>
+<td>Can start charging it without user input</td>
 <td>Y</td>
 <td>Hattie</td>
+<td>To help our users we also provide a charging station that the robot can mount and start charging itself on.</td>
 </tr>
 <tr>
-<td>Non‑Sharp Corners</td>
-<td>Isn’t sharp</td>
-<td>Won’t cut anyone who touches it</td>
-<td>Y</td>
+<td>Non-Sharp Corners</td>
+<td>Isn't sharp</td>
+<td>Won't cut anyone who touches it</td>
+<td>N</td>
 <td>Tim, Bryce</td>
+<td>To ensure safety for the people using our device we will file and deburr all the edges so nothing and no one gets cut or hurt while using our rover.</td>
 </tr>
 </tbody>
 </table>
