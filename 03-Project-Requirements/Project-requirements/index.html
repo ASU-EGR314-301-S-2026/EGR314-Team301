@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#header" class="md-skip">
+        <a href="#table" class="md-skip">
           Skip to content
         </a>
       
@@ -548,9 +548,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#header" class="md-nav__link">
+  <a href="#table" class="md-nav__link">
     <span class="md-ellipsis">
-      Header
+      Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context
     </span>
   </a>
   
@@ -695,9 +704,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#header" class="md-nav__link">
+  <a href="#table" class="md-nav__link">
     <span class="md-ellipsis">
-      Header
+      Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context
     </span>
   </a>
   
@@ -720,8 +738,175 @@
 
   <h1>Project Requirements</h1>
 
-<h2 id="header">Header</h2>
-<p>Add content</p>
+<h2 id="table">Table</h2>
+<table>
+<thead>
+<tr>
+<th>Requirement Description</th>
+<th>Measure of Threshold</th>
+<th>Target Measure</th>
+<th>Stretch Requirement</th>
+<th>Team Member</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Front Seeing Camera</td>
+<td>What can it see</td>
+<td>Have a good range</td>
+<td>N</td>
+<td>Hattie</td>
+</tr>
+<tr>
+<td>Surface Mounted Microcontroller</td>
+<td>1 PIC or ESP</td>
+<td>8‑bit ESP</td>
+<td>Y</td>
+<td>Everyone</td>
+</tr>
+<tr>
+<td>ESP32</td>
+<td>Wifi</td>
+<td>Connect the robot to controller</td>
+<td>Y</td>
+<td>Everyone</td>
+</tr>
+<tr>
+<td>LED</td>
+<td>Does it light up</td>
+<td>They turn on when needed</td>
+<td>Y</td>
+<td>Everyone</td>
+</tr>
+<tr>
+<td>Wireless Communication</td>
+<td>Have connection</td>
+<td>Have long distance connection</td>
+<td>Y</td>
+<td>Rylee</td>
+</tr>
+<tr>
+<td>Motors</td>
+<td>Moves entire body</td>
+<td>Does not overheat quickly due to load</td>
+<td>N</td>
+<td>Tim, Bryce</td>
+</tr>
+<tr>
+<td>Body to Hold All Components</td>
+<td>Keeps components in place</td>
+<td>Sturdy enough to protect components</td>
+<td>N</td>
+<td>Tim, Bryce</td>
+</tr>
+<tr>
+<td>Battery</td>
+<td>How long it lasts</td>
+<td>Lasts more than 10 min</td>
+<td>N</td>
+<td>Rylee</td>
+</tr>
+<tr>
+<td>Temperature Sensor</td>
+<td>Detects overheating</td>
+<td>Reaches a certain reading to determine overheating</td>
+<td>N</td>
+<td>Riley</td>
+</tr>
+<tr>
+<td>Hall Effect Sensor</td>
+<td>Measure increments on motor</td>
+<td>Detects magnetic fields and converts them into electrical signals</td>
+<td>N</td>
+<td>Tim, Bryce</td>
+</tr>
+<tr>
+<td>Humidity Sensor</td>
+<td>Reads humidity</td>
+<td>Accuracy of humidity</td>
+<td>N</td>
+<td>Riley</td>
+</tr>
+<tr>
+<td>Controller</td>
+<td>Can control the robot</td>
+<td>Has a very good input‑to‑output speed</td>
+<td>N</td>
+<td>Rylee</td>
+</tr>
+<tr>
+<td>Suspension</td>
+<td>Absorbs shock/impact</td>
+<td>Does not put high force on components; smooth driving</td>
+<td>N</td>
+<td>Tim, Bryce</td>
+</tr>
+<tr>
+<td>Tank Tread</td>
+<td>What terrain can it handle</td>
+<td>Drivable on all terrain</td>
+<td>N</td>
+<td>Tim, Bryce</td>
+</tr>
+<tr>
+<td>Gears for Tank Tread</td>
+<td>Secures treads</td>
+<td>No slippage; keeps treads tight</td>
+<td>N</td>
+<td>Tim, Bryce</td>
+</tr>
+<tr>
+<td>Speaker</td>
+<td>Makes a sound</td>
+<td>User can clearly hear it</td>
+<td>Y</td>
+<td>Rylee</td>
+</tr>
+<tr>
+<td>Distance Sensor</td>
+<td>Measure distance</td>
+<td>Senses when an object is too close and plays a sound</td>
+<td>Y</td>
+<td>Hattie</td>
+</tr>
+<tr>
+<td>Servo</td>
+<td>Move in 360</td>
+<td>Moves camera to any angle needed</td>
+<td>Y</td>
+<td>Hattie</td>
+</tr>
+<tr>
+<td>Reverse Camera</td>
+<td>Shows back view</td>
+<td>Shows only when reversing</td>
+<td>Y</td>
+<td>Hattie</td>
+</tr>
+<tr>
+<td>Motion Sensor</td>
+<td>Can sense motion</td>
+<td>Alerts user of motion and direction</td>
+<td>Y</td>
+<td>Hattie</td>
+</tr>
+<tr>
+<td>Charging Station</td>
+<td>Can get to the charging station</td>
+<td>Starts charging without user input</td>
+<td>Y</td>
+<td>Hattie</td>
+</tr>
+<tr>
+<td>Non‑Sharp Corners</td>
+<td>Isn’t sharp</td>
+<td>Won’t cut anyone who touches it</td>
+<td>Y</td>
+<td>Tim, Bryce</td>
+</tr>
+</tbody>
+</table>
+<h2 id="context">Context</h2>
 
 
 
