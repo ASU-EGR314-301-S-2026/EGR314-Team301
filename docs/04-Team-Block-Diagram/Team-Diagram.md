@@ -13,6 +13,9 @@ The following diagram illustrates the full team-level daisy-chain architecture i
 
 <br><br>
 ## Sequence Diagram
+
+<div style="overflow-x: auto;">
+
 ```mermaid
 sequenceDiagram
     autonumber
