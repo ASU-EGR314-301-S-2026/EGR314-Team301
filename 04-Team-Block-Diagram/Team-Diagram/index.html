@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#header" class="md-skip">
+        <a href="#team-block-diagram" class="md-skip">
           Skip to content
         </a>
       
@@ -594,9 +594,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#header" class="md-nav__link">
+  <a href="#team-block-diagram" class="md-nav__link">
     <span class="md-ellipsis">
-      Header
+      Team Block Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequence-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequence Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Types
     </span>
   </a>
   
@@ -695,9 +713,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#header" class="md-nav__link">
+  <a href="#team-block-diagram" class="md-nav__link">
     <span class="md-ellipsis">
-      Header
+      Team Block Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequence-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequence Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Types
     </span>
   </a>
   
@@ -720,8 +756,73 @@
 
   <h1>Block Diagram, Protocol, and Message Structure</h1>
 
-<h2 id="header">Header</h2>
-<p>Add content!</p>
+<h2 id="team-block-diagram">Team Block Diagram</h2>
+<p><br><br></p>
+<h2 id="sequence-diagram">Sequence Diagram</h2>
+<p></p><pre class="mermaid"><code>sequenceDiagram
+    autonumber
+    participant WebUser
+    participant Riley as Riley ESP32 (0x01)
+    participant Bryce as Bryce PIC (0x02)
+    participant Tim as Tim PIC (0x05)
+    participant Hattie as Hattie PIC (0x03)
+    participant Rylee as Rylee Controller (0x04)
+    participant HMI as Local HMI
+    participant Logger as Logging Node
+
+    Note over WebUser,Riley: Web user issues a command via MQTT, Riley injects into ribbon
+
+    %% 1) Web driven, targeted SetSpeed to Tim
+    WebUser-&gt;&gt;Riley: MQTT SetSpeed dst:0x05 type:0x0001 payload{motor:1,speed:150}
+    Riley-&gt;&gt;Bryce: FWD packet src:0x01 dst:0x05 type:SetSpeed
+    Bryce-&gt;&gt;Tim: FWD packet src:0x01 dst:0x05 type:SetSpeed
+    Note over Tim: Destination matches 0x05, consume packet
+    Tim-&gt;&gt;Tim: Apply motor command
+    Tim--&gt;&gt;Bryce: ACK src:0x05 dst:0x01 type:0x0004 status:OK
+    Bryce--&gt;&gt;Riley: FWD ACK
+    Riley--&gt;&gt;WebUser: MQTT publish confirmation result:OK
+
+    %% 2) In person HMI event at Rylee forwarded upstream for logging and action
+    HMI-&gt;&gt;Rylee: ButtonPress type:3
+    Rylee-&gt;&gt;Hattie: FWD packet src:0x04 dst:0x03 type:0x0043 button:3
+    Hattie--&gt;&gt;Rylee: ACK src:0x03 dst:0x04 type:0x0004 status:OK
+    Rylee-&gt;&gt;Riley: Publish event upstream for logging
+    Riley-&gt;&gt;Logger: Deliver button event for storage
+
+    %% 3) Periodic telemetry, recurring sequence every 1s
+    loop every 1s
+        Hattie-&gt;&gt;Tim: Telemetry src:0x03 dst:0x01 type:0x0003 {distance, motion, temp}
+        Tim-&gt;&gt;Bryce: FWD telemetry
+        Bryce-&gt;&gt;Riley: FWD telemetry
+        Riley--&gt;&gt;WebUser: MQTT telemetry publish
+    end
+
+    %% 4) Broadcast request for status from WebUser
+    WebUser-&gt;&gt;Riley: MQTT Broadcast Request dst:0xFF type:0x0002 mask:all
+    Riley-&gt;&gt;Bryce: Broadcast FWD src:0x01 dst:0xFF type:RequestTelemetry
+    Bryce-&gt;&gt;Tim: Broadcast FWD
+    Tim-&gt;&gt;Hattie: Broadcast FWD
+    Hattie-&gt;&gt;Rylee: Broadcast FWD
+    Note over all: Each node that is able replies upstream with Telemetry packets
+    Rylee--&gt;&gt;Hattie: Telemetry reply src:0x04 dst:0x01 type:0x0003
+    Hattie--&gt;&gt;Tim: Telemetry reply
+    Tim--&gt;&gt;Bryce: Telemetry reply
+    Bryce--&gt;&gt;Riley: Telemetry reply
+    Riley--&gt;&gt;WebUser: Aggregate and publish broadcast replies
+
+    %% 5) Example of a message tossed because of TTL expiry or malformed header
+    Riley-&gt;&gt;Bryce: FWD packet with TTL=0 type:0x0FFF cfg update
+    Bryce-&gt;&gt;Tim: FWD packet TTL hits 0
+    Tim--xTim: Drop packet, send Error src:0x05 dst:0x01 type:0x0005 code:0x04
+    Tim--&gt;&gt;Bryce: Error forward
+    Bryce--&gt;&gt;Riley: Error forward
+    Riley--&gt;&gt;WebUser: MQTT publish error notification
+
+    %% 6) Disposal example where an intermediate node discards a message targeted at a different local submodule
+    Bryce-&gt;&gt;Tim: FWD packet src:0x02 dst:0x02 type:0x0001 (local motor)
+    Note over Tim: packet dest equals node id, Tim consumes and does not forward</code></pre>
+<br><br><p></p>
+<h2 id="message-types">Message Types</h2>
 
 
 
