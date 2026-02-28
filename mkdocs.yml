@@ -13,7 +13,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - toc.follow    
+    - toc.follow
     - navigation.top
     - navigation.path
     - navigation.indexes
@@ -41,21 +41,23 @@ draft_docs: |
   **/*_unpublished.md
   **/*_draft.md
   **/*_draft**
-  
+
 plugins:
   - search
   - glightbox # allow resize images, see https://squidfunk.github.io/mkdocs-material/reference/images/
 
 extra_css:
-  - stylesheets/extra.css  
+  - stylesheets/extra.css
 
 extra_javascript:
  - javascripts/mathjax.js
  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-    
+
 not_in_nav: |
   static
-  
+  Appendix/03-Examples-to-Hide
+  Appendix/_archive
+
 copyright: "Copyright &copy; 2026 Team 301"
 
 extra:
@@ -63,4 +65,4 @@ extra:
   social:
     - icon: fontawesome/regular/file-code
       link: /2023_fall
-      name: 2023 Site    
+      name: 2023 Site
