@@ -11,6 +11,11 @@ Who is your audience?
 
 The intended audience for this device is researchers and field technicians working in scientific labs or outdoor research settings. This includes users who need a reliable system for sample collection or exploration but may not have a background in robotics. The rover is designed to be straightforward to operate, with clear controls and feedback so users can focus on their task rather than the technology itself. Its design prioritizes durability and ease of use to meet the practical needs of real world research environments.
 
+## Organized Brainstorming Summary
+
+Although the full brainstorming list is retained for completeness, the ideas naturally group into a few useful categories. Mobility and chassis concepts focus on tracked versus wheeled bases and physical protection for electronics. Sensing and perception ideas include cameras, motion tracking, hall effect sensors, GPS, and environmental sensors for reliable situational awareness. Controls and user interfaces cluster around familiar input devices such as game controllers, tablets, and phones, with a secondary thread exploring autonomous or AI assisted features. Safety and usability ideas cover emergency stops, anti slip surfaces, and clear visual and audio cues. Power and accessories center on practical power delivery options, chargers, and docking stations. Keeping the complete list preserves creative breadth while these categories help explain which directions we explored and why certain ideas were favored for further development.
+
+---
 
 ## Brainstorming
 
@@ -47,7 +52,7 @@ The intended audience for this device is researchers and field technicians worki
 |  | AI controlled | This design choice centers on familiar devices by using ai controlled to make the interaction feel clearer and more intuitive for users. |
 |  | Tablet | This concept focuses on familiar devices by using tablet to make the interaction feel clearer and more intuitive for users. |
 |  | Nintendo Switch | This idea is intended to reinforce immersive controls by using nintendo switch to make the interaction feel clearer and more intuitive for users. |
-|  | Keyboard | Here, the design relies on immersive controls by using keyboard to make the interaction feel clearer and more intuitive for users. |
+|  | Keyboard | This design choice centers on immersive controls by using keyboard to make the interaction feel clearer and more intuitive for users. |
 |  | Switches | This concept focuses on immersive controls by using switches to make the interaction feel clearer and more intuitive for users. |
 |  | Mouse | This design choice centers on immersive controls by using mouse to make the interaction feel clearer and more intuitive for users. |
 |  | Steering wheel | This idea is intended to reinforce immersive controls by using steering wheel to make the interaction feel clearer and more intuitive for users. |
@@ -117,7 +122,6 @@ The intended audience for this device is researchers and field technicians worki
 |  | Use subtle terrain cues | This option helps prioritize clear interaction flow by using use subtle terrain cues to make the interaction feel clearer and more intuitive for users. |
 |  | Layered feedback | This concept focuses on clear interaction flow by using layered feedback to make the interaction feel clearer and more intuitive for users. |
 |  | End of use summary | This approach highlights clear interaction flow by using end of use summary to make the interaction feel clearer and more intuitive for users. |
-
 
 ## Ranked and Sorted Brainstorming
 
@@ -224,28 +228,108 @@ The intended audience for this device is researchers and field technicians worki
 | Visual Output & Visual Communication | 8 | Laser pointer |
 | Visual Output & Visual Communication | 9 | Light bulb |
 
-
 ## Project Concepts
 
 ### Concept 1
 ![Concept 1](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/docs/02-Concept-Design/EGR314_Project_Concept_Idea_51.png)
 
+*Figure 1: Initial whiteboard mapping user needs to subsystem concepts and potential cues. This image shows early group thinking and the wide scope of ideas we considered.*
+
 The exploration device is designed to meet the user’s needs by combining mobility, environmental awareness, and easy remote control, as shown in the concept image. The tracked base allows the robot to move over rough or uneven terrain, making it useful for exploring areas that may be unsafe or hard to reach. A built-in camera and motion sensors provide real-time visual feedback and detect obstacles, helping the user understand the environment and avoid collisions. Wireless communication allows the robot to receive commands from the controller and send video and sensor information back to the user’s screen. The project is divided among five teammates, with each member responsible for one key feature: one handles wireless communication between the robot and controller, one focuses on the screen and user controls, one manages the sensors and environmental detection, one controls the motors and tracked movement based on user input, and one manages power distribution to keep the system running reliably. Clear on-screen indicators, distance warnings, and a live camera feed make the device easy to use, while a familiar game-style controller helps reduce the learning curve. The rugged tracked design protects the components and improves durability, and only basic instruction is needed to operate the system safely and effectively.
+
+### Concept 1 — Advantages, Disadvantages, Complexity
+
+**Advantages**  
+- Simpler centralized control makes initial firmware and testing straightforward.  
+- Fewer distributed nodes reduces communication overhead.  
+- Easier to debug during early bench tests.
+
+**Disadvantages**  
+- Limited modularity reduces expandability for future sensors and payloads.  
+- A single point of failure increases integration risk if the controller malfunctions.  
+- Harder to isolate faults during full system testing.
+
+**Estimated Complexity**  
+Moderate
+
+---
 
 ### Concept 2
 ![Concept 2](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/docs/02-Concept-Design/EGR314_Project_Concept_Idea_Rover.png)
 
+*Figure 2: Refined sketch that tests mechanical layouts and user interface placements. This sketch guided early decisions about controller mapping and LED placement.*
+
 The features highlighted in the concept sketch meet our users' needs. The design has smooth edges for safety. It has an emergency stop button in case of failure. There is a buzzer and LEDs for the rover to communicate with the user. It has a gyroscope and cameras so it can tell where it is and what is around it. The functionality will be split into 5 parts, with 2 people for motor control, 1 person for the steering wheel, 1 person for the hall effect sensor, and 1 person for the temperature sensor. This is all included in the circuits part of the design. The first cue is colors, so the user can clearly see which button to press without having to look for text. The on button will be green, and the off button will be red. There are also LEDs labeled to indicate what is happening inside the robot, and a buzzer in case of an error that will alarm the user. The robot is controlled by a steering wheel with forward and reverse triggers. There is a big stop button that will be a bright yellow with an exclamation point in the center. Finally, there are 2 D-Pads for more control if the user does not want to turn the steering wheel controller. The robot and controller will be made out of durable material, so they will last a long time. The edges of the robot will be smooth, so the user will not get hurt if they get run into by the robot. There will be a small booklet with simple step-by-step instructions, as well as a link to a video that explains in detail how to operate the robot.
+
+### Concept 2 — Advantages, Disadvantages, Complexity
+
+**Advantages**  
+- Good balance between modularity and simplicity which suits the team skill set.  
+- Clear visual and audio cues improve safety during demos and field use.  
+- Modular subsystems let team members own distinct pieces for parallel development.
+
+**Disadvantages**  
+- Slightly more firmware complexity because modules need message handling.  
+- A few more hardware parts than the most minimal design which affects build time.
+
+**Estimated Complexity**  
+Moderate
+
+---
 
 ### Concept 3
 ![Concept 3](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/docs/02-Concept-Design/EGR314_Project_Concept_Idea_Tank.png)
+
+*Figure 3: Final concept sketch used to check sensor locations, camera placement, and docking alignment. This sketch was the primary reference for module ownership and integration planning.*
 
 This rover meets the needs of exploration through three cameras and space for multiple sensors to collect data. LEDs are used to communicate the rover’s status, errors, and operating conditions, helping the user understand its current situation. The rover’s functionality is divided between its wheels, cameras, LEDs, body, and sensors, with a durable and comfortable form that supports regular use. The instructions will be accessible through QR codes and written in an effective way. 
 The charging station is divided into wiring, a protective body, and wheel holders with stoppers that guide the rover into place and hold it securely during charging. Guard reels support safe docking, and a sliding door houses the charging cable.
 The controller is designed to connect easily and function intuitively, using familiar joysticks, a D-pad, and physical buttons. Color cues and tactile feedback support comfortable operation and clear control. Instructions are provided through a QR code to allow quick understanding of basic operation, controls, and LED meanings.
 
+### Concept 3 — Advantages, Disadvantages, Complexity
+
+**Advantages**  
+- Strong sensing coverage with multiple cameras and flexible sensor bays.  
+- Designed with robust docking and charging which helps repeated field use.  
+- Good user affordances through QR code instructions and tactile cues.
+
+**Disadvantages**  
+- Higher cost and heavier mechanical structure which impacts portability.  
+- More complex docking and charging mechanisms require extra mechanical testing.
+
+**Estimated Complexity**  
+High
+
+---
+
+## Competitive Analysis
+
+We reviewed several commercial and hobbyist platforms to understand common tradeoffs. Many commercial systems provide high mobility but are closed and hard to modify, while hobbyist platforms are cheap and flexible yet often lack reliability and clear system architecture. From that review we decided to emphasize modularity, clear communication between modules, and simple but robust user interfaces. Our rover aims to sit between those groups by offering a reliable, maintainable platform that is still approachable for users who are not robotics experts.
+
+---
+
+## Decision Making and Tradeoffs
+
+The team selected Concept 2 after a structured discussion that weighed modularity, safety, build feasibility, and demo readiness. Concept 1 was simple but lacked flexibility. Concept 3 was powerful but too heavy for our timeline and resources. Concept 2 offered the right compromise, modular subsystems that allow parallel work by team members, clear safety features for public demos, and a controller design that reduces the learning curve for users. We combined elements from other concepts where useful, for example taking Concept 3's robust LED status indicators and pairing them with Concept 2's simpler, more reliable control scheme. Instructor feedback emphasizing demo safety and clear on stage communication also pushed us toward Concept 2.
+
+The main tradeoff accepted was slightly increased firmware complexity to support modular messaging and status reporting in exchange for easier testing, clearer fault isolation, and a safer demo experience.
+
+---
+
+## Design Evolution
+
+Our design evolved from broad creative brainstorming to a focused, testable concept. Early sketches emphasized many possible cues and interfaces. As we prototyped basic controller inputs and tested mobility ideas, we narrowed features to those that directly improved safety and demonstrability. The final concept preserves the most useful cues and interfaces from ideation while keeping mechanical and electrical scope compatible with our schedule.
+
 ## Selected Concept
 
-![Concept 2](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/docs/02-Concept-Design/EGR314_Project_Concept_Idea_Rover.png)
+![Concept 3](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/docs/02-Concept-Design/EGR314_Project_Concept_Idea_Tank.png)
 
-We decided to go with concept 2. It had a good balance of safety and functionality, while also having enough features to allow our team members to be able to each have a unique role in its construction. In addition, this design was the most feasible for our team to complete, with a fairly simple design, while still keeping a good variety of functionality. The controller for concept 2 is fairly simple, and will be easier to control the rover with than the other options. The various visual indicators and safety additions meant that the concpet would also be safer than the other options for presenting and operating. The concept was selected after a discussion with the team, reviewing the strengths and weaknesses of each design, where the majority of the team believed that concept 2 was the strongest idea for us to move forward. 
+The final rover design is primarily based on Concept 3, which provided the strongest overall system layout, sensor flexibility, and long term expandability. Concept 3’s multi camera approach and modular sensor placement aligned best with our goal of building a capable exploration platform that can collect meaningful environmental data.
+
+While Concept 3 serves as the structural foundation, the control philosophy was influenced heavily by Concept 2. Rather than developing a custom steering interface, the team selected a familiar Xbox or PlayStation style controller to reduce user learning curve and improve intuitive operation. This decision increases usability while lowering implementation risk. The live camera feed and system interface will be displayed on a laptop, providing clear visualization and simplifying integration compared to building a dedicated display module.
+
+The team selected this hybrid direction after evaluating feasibility, clarity during demonstrations, and overall integration complexity. Concept 3 provided the most complete exploration framework, while borrowing the intuitive control approach from Concept 2 ensured the system would remain approachable and safe to operate.
+
+The primary tradeoff accepted in this decision was relying on an external laptop for visualization rather than embedding a dedicated screen. This increases portability requirements but significantly reduces hardware complexity and improves debugging capability during development.
+
+This combined approach allows the rover to remain modular, expandable, and realistic within the semester timeline while preserving the strongest ideas generated during concept development.
