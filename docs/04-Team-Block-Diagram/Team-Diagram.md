@@ -9,7 +9,49 @@ The following diagram illustrates the full team-level daisy-chain architecture i
 
 <img width="4862" height="1286" alt="TeamBlockDiagram301 drawio" src="https://github.com/user-attachments/assets/87883bb3-d89b-4184-9dd6-7e18c09ede92" />
 
+## System Architecture Overview
 
+The rover architecture is organized into modular functional nodes connected in a daisy-chain communication structure. Each node is responsible for a clearly defined subsystem, including controller input, drivetrain control, environmental sensing, camera processing, and gateway communication. This modular grouping aligns with team member ownership and allows hardware and firmware development to occur in parallel while maintaining clean integration boundaries.
+
+The daisy-chain structure was selected to simplify physical wiring and reduce routing complexity between distributed boards. Rather than implementing a fully connected bus, each node forwards messages downstream unless the destination address matches its own node ID. This reduces the number of required communication lines while preserving deterministic routing behavior.
+
+---
+
+## Communication Architecture Rationale
+
+The team selected a structured packet-based communication protocol with explicit source and destination addressing to ensure reliable message routing and traceability. Each message includes a source ID, destination ID, message type, and payload, allowing commands, telemetry, acknowledgements, and error reporting to coexist within a single unified format.
+
+A daisy-chain forwarding model was chosen over broadcast-only or peer-to-peer architectures to:
+
+- Minimize wiring complexity
+- Simplify debugging by preserving packet order
+- Enable deterministic routing and TTL handling
+- Maintain compatibility with class framing requirements
+
+The use of ACK and error packets improves reliability and supports traceable debugging during integration and demonstration.
+
+---
+
+## Power Architecture and Isolation
+
+Power is distributed from the central battery system and regulated locally at each subsystem as required. Logic-level devices operate at regulated voltage levels appropriate for microcontrollers and sensors, while drivetrain components draw higher current from the primary supply rail.
+
+Separating logic regulation from motor power reduces electrical noise coupling and minimizes the risk of brownout events when motors experience load spikes. This power segmentation improves overall system reliability and aligns with project requirements for stable communication, sensor accuracy, and safe operation.
+
+---
+
+## Requirements Alignment
+
+The block diagram directly supports the measurable system requirements defined in the Project Requirements section. Modular node separation enables independent verification of drivetrain mobility, environmental sensing accuracy, wireless communication range, and controller responsiveness.
+
+The structured communication protocol ensures:
+
+- Reliable wireless command transmission
+- Deterministic telemetry reporting
+- Rapid emergency stop propagation
+- Clear error reporting and debugging support
+
+The power segmentation strategy supports runtime duration requirements and protects subsystem stability during load variation. Overall, the architecture was intentionally structured to satisfy reliability, safety, and expandability requirements while remaining achievable within the semester timeline.
 
 <br><br>
 ## Sequence Diagram
@@ -121,6 +163,19 @@ All strings must be **null-terminated (`0x00`)**.
 | Bryce (Motor Node) | `0x02` |
 | Tim (Motor Node) | `0x05` |
 | Broadcast | `0xFF` |
+
+---
+
+
+
+## Addressing Scheme
+
+Each node in the system is assigned a unique 8-bit identifier. The Source ID field identifies the originating node, while the Destination ID field identifies the intended recipient.
+
+If the Destination ID matches the local node ID, the packet is consumed and processed. If the Destination ID is `0xFF`, the packet is treated as a broadcast message and forwarded by all nodes. Otherwise, the packet is forwarded downstream according to routing rules.
+
+This addressing scheme ensures deterministic routing behavior and supports both targeted commands and broadcast telemetry requests.
+
 
 ---
 
@@ -271,5 +326,13 @@ Status Flags:
 5. Preserve bytes 0–3 and 62–63 unchanged when forwarding.
 
 ---
+
+## Diagram Source Files
+
+- Editable block diagram source file: [Download Draw.io Source](LINK_TO_DRAWIO_FILE)
+- High-resolution diagram image: [Download PNG](LINK_TO_IMAGE_FILE)
+- Full diagram asset bundle (ZIP): [Download Assets](LINK_TO_ZIP)
+
+All diagram source files are stored in the Appendix to ensure reproducibility and transparency of system design.
 
 This document defines the canonical team message protocol and must be implemented consistently across all boards.
