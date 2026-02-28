@@ -2,78 +2,69 @@
 title: Appendix - Extra Team Organization Information
 ---
 
-## Roles & Responsibilities
+## Roles and Responsibilities
 
 _Table 1: Project Roles and Duties_
 
-| **Role**               | **Duties**                                                                                                                                | **Name**      |
-| :--------------------- | :---------------------------------------------------------------------------------------------------------------------------------------- | :------------ |
-| Meeting leader         | Schedules team meetings, creates and distributes an agenda for each meeting, and runs each meeting                                        | Rylee         |
-| Meeting recorder       | Takes minutes of each team meeting, including attendance, and records action items and to whom they are assigned                          | Bryce         |
-| Assignment leader      | Coordinates the team's work on a given assignment to Canvas before the due date                                                           | Riley      |
-| Project monitor        | Tracks the team's progress relative to the project schedule (Gantt chart) and keeps team members apprised of deadlines and project status |Tim      |
-| Quality control leader | Ensures the work the team does fulfills the rubric and the vision for our product                                                         | Hattie        |
+| Role | Duties | Name |
+| :--- | :----- | :--- |
+| Meeting leader | Schedules meetings, creates and distributes agendas, runs meetings | Rylee |
+| Meeting recorder | Takes minutes, records attendance, tracks action items | Bryce |
+| Assignment leader | Coordinates assignment submission to Canvas and verifies links | Riley |
+| Project monitor | Tracks schedule and status against the Gantt chart | Tim |
+| Quality control leader | Ensures deliverables meet rubric and team standards | Hattie |
+
+---
 
 ## Communication Channels
 
-### Team Communication Method
+### Team Communication Preferences
 
-*Table 2: Team Members' Prefered Communication Modes*
+_Table 2: Preferred Communication Modes_
 
-| **Name** | **First Choice Communication** | **Second Choice Communication** | **Third Choice Communication** |
-| :------- | :----------------------------- | :------------------------------ | :----------------------------- |
-| Rylee    | Text                           | Email                           | Phone                          |
-| Bryce    | Text                           | Discord                         | Phone                          |
-| Hattie   | Text                           | Email                           | Discord                        |
-| Riley    | Text                           | Discord                         | Email                          |
-| Tim |       Text                         |         Discord                        |     Phone                           |
+| Name | First Choice | Second Choice | Third Choice |
+| :--- | :----------- | :------------ | :----------- |
+| Rylee | Text | Email | Phone |
+| Bryce | Text | Discord | Phone |
+| Hattie | Text | Email | Discord |
+| Riley | Text | Discord | Email |
+| Tim | Text | Discord | Phone |
 
 ### Communication Procedures
 
-Our team agreed upon using text messaging to communicate about our project. It is expected that we will respond to each other when it is the next convenient time to the person as well as within a reasonable amount of time. The times our team is completely free on Tuesday and Wednesday at 6 & 7 pm in the Library. To remind everyone of meetings, Rylee will send out a text that day or the day before.  
+We use text messaging for day to day coordination. Meeting reminders are sent the day before and the day of the meeting. Hattie is the main instructor contact and will forward important emails to the team.
 
-We have decided that Hattie Lee will be the main point of contact with our instructor and will relay information back to us by text message or, if needed, by forwarding the email to all of us.
+---
 
+## Team Contract
 
-### Meeting Schedule and Coordination
+If a formal team contract is required, upload the signed PDF here and link it. Example placeholder:
 
-**Table 3**: Weekly Schedule
+- Team contract PDF: [Download team contract](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/Appendix/Organization/team_contract.pdf)
 
-| Time     | Monday | Tuesday | Wednesday | Thursday | Friday | 
-| :------: | :----: | :----:  | :----:    | :----:   | :----: | 
-| 8:00 AM  | -      | -       | -         | -        | -      | 
-| 9:00 AM  | RW     | RW      | RW        | RW       | RW     | 
-| 10:00 AM | -      | RW RF   | -         | RW  RF     | RW BW    | 
-| 11:00 AM | -      | RW RF TD   | -         | RW  RF TD    | RW HL TD BW  |
-| 12:00 PM | -      | RW RF TD   | -         | RW  RF TD    | RW HL TD BW   | 
-| 1:00 PM  | -      | RW TD   | -         | RW  TD   | RW HL BW    | 
-| 2:00 PM  | RW     | RW TD    | RW  RF      | RW  TD     | RW HL     | 
-| 3:00 PM  | RW HL TD BW | RW HL RF BW | RW HL RF TD BW  | RW HL RF BW    | RW HL TD   |
-| 4:00 PM  | HL TD BW    |  HL RF BW     | HL RF TD BW  | HL RF BW      | RW HL  TD   | 
-| 5:00 PM  | HL TD BW   | HL RF BW     | HL RF TD BW  | HL RF BW     | RW HL TD    | 
-| 6:00 PM  | RW HL TD BW  | RW HL RF TD BW   | RW HL RF TD BW    | RW HL TD BW     | RW HL  TD   | 
-| 7:00 PM  | RW HL RF TD BW  | RW HL RF TD BW  | RW HL RF TD BW    | RW HL TD BW    | RW HL  TD   | 
+If the contract does not exist, remove this link and instead include a short note about group norms and consequences for non participation.
 
-_**Table Legend for Appendix Table 3**_
+---
 
-| Name | Abbreviation |
-| ----- | :------: |
-| Rylee | RW |
-| Bryce | BW |
-| Hattie | HL |
-| Riley | RF |
-| Tim | TD |
+## Revision History
 
-Our team will meet face-to-face when possible and if needed, virtually. The team's meeting leader will discuss with team members about when to meet and send reminders of when the meeting is the day of the meeting. If a member does not show up to the meeting without notice, we will call and check in with that member.
+Keep a short revision log to show document evolution. Add entries as changes are made.
 
-### Team Coordination & Accountability
+| Version | Date | Author | Notes |
+| :------ | :--- | :----: | :---- |
+| 0.1 | 2026-02-01 | Rylee | Initial appendix organization page |
+| 0.2 | 2026-03-05 | Hattie | Added meeting minutes and team contract placeholders |
+| 0.3 | 2026-04-14 | Team 301 | Added org chart and revised roles table |
 
-All assignments will be submitted to Canvas by our quality control leader, Hattie, and will include team and/or individual GitHub links as required. The team will collaborate during labs and assignments to ensure everyone understands the material and stays aligned, seeking help from teaching assistants and the professor during labs and attending office hours when needed. Feedback will be reviewed and addressed by both individuals and the team to ensure quality work and on-time submissions.
+Update this table whenever files are added or updated.
 
-Missed contributions or responsibilities will be noted and discussed as necessary, and team members will hold one another to the expectations outlined in this charter. If a member is underperforming, the team will recognize the issue, create a plan to support improvement, and help them catch up. Continued lack of improvement may result in a pink slip or a meeting with the professor and the team.
+---
 
-#### Conflict Recognition & Resolution
+## Org Chart Source
 
-Any minor conflicts that can be solved through typical communication channels should be handled through text or face to face conversations. Disagreements relating to how to complete assignments, such as formatting, what components to include in the final project, and so on will be decided by a vote, in which the proposal with the most votes will be accepted. If a conflict has been ongoing continuously for a period of two weeks without resolution, or a majority of the team believes an assignment will not be successfully completed, the team members can raise that issue to the professor.
+Provide the editable org chart source as a drawio file and a PNG preview. Replace the example links with your file locations.
 
-If a member of the team is not performing their duties, and attempts have been made by the team to inform and allow the team member to improve, the team may choose to issue a pink slip or raise the issue to the professor. If this is done, communications with the member, edit logs on the github repository, and changes made in google documents should be provided to show an attempt by the team to aid the team member in improving their participation, and the lack of improvement by the team member.
+- Editable drawio source: [Download org chart drawio](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/Appendix/Organization/team_org_chart.drawio)  
+- High resolution PNG: [Download org chart PNG](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/Appendix/Organization/team_org_chart.png)
+
+If you do not have drawio source, export one from diagrams.net and add it to the folder, then update links.
