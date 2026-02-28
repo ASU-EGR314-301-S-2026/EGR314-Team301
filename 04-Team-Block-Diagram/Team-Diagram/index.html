@@ -603,6 +603,42 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#system-architecture-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Architecture Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#communication-architecture-rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Communication Architecture Rationale
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-architecture-and-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Architecture and Isolation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements Alignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sequence-diagram" class="md-nav__link">
     <span class="md-ellipsis">
       Sequence Diagram
@@ -624,6 +660,15 @@
   <a href="#node-ids" class="md-nav__link">
     <span class="md-ellipsis">
       Node IDs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#addressing-scheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addressing Scheme
     </span>
   </a>
   
@@ -722,6 +767,21 @@
       Routing Rules
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Routing Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-source-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram Source Files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -827,6 +887,42 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#system-architecture-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Architecture Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#communication-architecture-rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Communication Architecture Rationale
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-architecture-and-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Architecture and Isolation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements Alignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sequence-diagram" class="md-nav__link">
     <span class="md-ellipsis">
       Sequence Diagram
@@ -848,6 +944,15 @@
   <a href="#node-ids" class="md-nav__link">
     <span class="md-ellipsis">
       Node IDs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#addressing-scheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addressing Scheme
     </span>
   </a>
   
@@ -947,6 +1052,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Routing Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-source-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram Source Files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -967,6 +1087,35 @@
 <h2 id="team-block-diagram">Team Block Diagram</h2>
 <p>The following diagram illustrates the full team-level daisy-chain architecture including power distribution, ribbon cable connections, and microcontroller mappings.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/87883bb3-d89b-4184-9dd6-7e18c09ede92" data-desc-position="bottom"><img width="4862" height="1286" alt="TeamBlockDiagram301 drawio" src="https://github.com/user-attachments/assets/87883bb3-d89b-4184-9dd6-7e18c09ede92"></a></p>
+<h2 id="system-architecture-overview">System Architecture Overview</h2>
+<p>The rover architecture is organized into modular functional nodes connected in a daisy-chain communication structure. Each node is responsible for a clearly defined subsystem, including controller input, drivetrain control, environmental sensing, camera processing, and gateway communication. This modular grouping aligns with team member ownership and allows hardware and firmware development to occur in parallel while maintaining clean integration boundaries.</p>
+<p>The daisy-chain structure was selected to simplify physical wiring and reduce routing complexity between distributed boards. Rather than implementing a fully connected bus, each node forwards messages downstream unless the destination address matches its own node ID. This reduces the number of required communication lines while preserving deterministic routing behavior.</p>
+<hr>
+<h2 id="communication-architecture-rationale">Communication Architecture Rationale</h2>
+<p>The team selected a structured packet-based communication protocol with explicit source and destination addressing to ensure reliable message routing and traceability. Each message includes a source ID, destination ID, message type, and payload, allowing commands, telemetry, acknowledgements, and error reporting to coexist within a single unified format.</p>
+<p>A daisy-chain forwarding model was chosen over broadcast-only or peer-to-peer architectures to:</p>
+<ul>
+<li>Minimize wiring complexity</li>
+<li>Simplify debugging by preserving packet order</li>
+<li>Enable deterministic routing and TTL handling</li>
+<li>Maintain compatibility with class framing requirements</li>
+</ul>
+<p>The use of ACK and error packets improves reliability and supports traceable debugging during integration and demonstration.</p>
+<hr>
+<h2 id="power-architecture-and-isolation">Power Architecture and Isolation</h2>
+<p>Power is distributed from the central battery system and regulated locally at each subsystem as required. Logic-level devices operate at regulated voltage levels appropriate for microcontrollers and sensors, while drivetrain components draw higher current from the primary supply rail.</p>
+<p>Separating logic regulation from motor power reduces electrical noise coupling and minimizes the risk of brownout events when motors experience load spikes. This power segmentation improves overall system reliability and aligns with project requirements for stable communication, sensor accuracy, and safe operation.</p>
+<hr>
+<h2 id="requirements-alignment">Requirements Alignment</h2>
+<p>The block diagram directly supports the measurable system requirements defined in the Project Requirements section. Modular node separation enables independent verification of drivetrain mobility, environmental sensing accuracy, wireless communication range, and controller responsiveness.</p>
+<p>The structured communication protocol ensures:</p>
+<ul>
+<li>Reliable wireless command transmission</li>
+<li>Deterministic telemetry reporting</li>
+<li>Rapid emergency stop propagation</li>
+<li>Clear error reporting and debugging support</li>
+</ul>
+<p>The power segmentation strategy supports runtime duration requirements and protects subsystem stability during load variation. Overall, the architecture was intentionally structured to satisfy reliability, safety, and expandability requirements while remaining achievable within the semester timeline.</p>
 <p><br><br></p>
 <h2 id="sequence-diagram">Sequence Diagram</h2>
 <pre class="mermaid"><code>sequenceDiagram
@@ -1121,6 +1270,11 @@ All strings must be <strong>null-terminated (<code>0x00</code>)</strong>.</p>
 </tr>
 </tbody>
 </table>
+<hr>
+<h2 id="addressing-scheme">Addressing Scheme</h2>
+<p>Each node in the system is assigned a unique 8-bit identifier. The Source ID field identifies the originating node, while the Destination ID field identifies the intended recipient.</p>
+<p>If the Destination ID matches the local node ID, the packet is consumed and processed. If the Destination ID is <code>0xFF</code>, the packet is treated as a broadcast message and forwarded by all nodes. Otherwise, the packet is forwarded downstream according to routing rules.</p>
+<p>This addressing scheme ensures deterministic routing behavior and supports both targeted commands and broadcast telemetry requests.</p>
 <hr>
 <h1 id="message-types_1">Message Types</h1>
 <hr>
@@ -1454,6 +1608,13 @@ All strings must be <strong>null-terminated (<code>0x00</code>)</strong>.</p>
 <li>Preserve bytes 0–3 and 62–63 unchanged when forwarding.</li>
 </ol>
 <hr>
+<h2 id="diagram-source-files">Diagram Source Files</h2>
+<ul>
+<li>Editable block diagram source file: <a href="LINK_TO_DRAWIO_FILE">Download Draw.io Source</a></li>
+<li>High-resolution diagram image: <a href="LINK_TO_IMAGE_FILE">Download PNG</a></li>
+<li>Full diagram asset bundle (ZIP): <a href="LINK_TO_ZIP">Download Assets</a></li>
+</ul>
+<p>All diagram source files are stored in the Appendix to ensure reproducibility and transparency of system design.</p>
 <p>This document defines the canonical team message protocol and must be implemented consistently across all boards.</p>
 
 
