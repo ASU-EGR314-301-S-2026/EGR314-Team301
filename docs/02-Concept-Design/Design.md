@@ -340,5 +340,5 @@ This combined approach allows the rover to remain modular, expandable, and reali
 
 ## Resources
 Bryce's CAD ZIP can be downloaded [here.](https://github.com/user-attachments/files/25812168/314.Rover.Idea.BW_.Assembly.1_files.zip)
-
+Tim's  CAD ZIP can be downloaded [here.](https://github.com/user-attachments/files/25812513/Search.Tank.zip)
 
