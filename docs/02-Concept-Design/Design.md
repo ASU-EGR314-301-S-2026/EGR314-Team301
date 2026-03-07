@@ -232,6 +232,8 @@ Although the full brainstorming list is retained for completeness, the ideas nat
 
 ### Concept 1
 ![Concept 1](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/docs/02-Concept-Design/EGR314_Project_Concept_Idea_51.png)
+[SVG File](https://github.com/user-attachments/assets/b7b1906a-8343-4c26-8758-0dd42206ff6f)
+
 
 *Figure 1: Initial whiteboard mapping user needs to subsystem concepts and potential cues. This image shows early group thinking and the wide scope of ideas we considered.*
 
