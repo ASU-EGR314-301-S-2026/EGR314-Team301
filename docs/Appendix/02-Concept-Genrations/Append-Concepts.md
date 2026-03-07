@@ -22,7 +22,8 @@ Full resolution images, for grading purposes:
 
 ### Concept Sketches
 
-- Concept sketch 1 (PNG): [Download sketch 1](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/Appendix/Concepts/concept1.png)  
+- Concept sketch 1 ![Concept 1](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/docs/02-Concept-Design/EGR314_Project_Concept_Idea_51.png)
+[SVG File](https://github.com/user-attachments/assets/b7b1906a-8343-4c26-8758-0dd42206ff6f)
 - Concept sketch 2 (PNG): [Download sketch 2](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/Appendix/Concepts/concept2.png)  
 - Concept sketch 3 (PNG): [Download sketch 3](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/Appendix/Concepts/concept3.png)
 
