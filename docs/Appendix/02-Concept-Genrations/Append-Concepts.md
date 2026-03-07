@@ -50,24 +50,8 @@ A single archive with the full concept generation artifacts
 
 - Full concept bundle (ZIP): [Download all concept artifacts](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/Appendix/Concepts/concept_artifacts_bundle.zip)
 
----
+### CAD Project Files
 
-## Upload checklist
+- Bryce's CAD for the concept generation 2 (ZIP): [Download CAD ZIP](https://github.com/user-attachments/files/25812187/314.Rover.Idea.BW_.Assembly.1_files.zip)
+- Tim's CAD for the concept generation 3 (ZIP): [Download CAD ZIP]
 
-Use the following checklist when adding files to this folder:
-
-1. Full resolution whiteboards added as PNG or JPG.  
-2. Thumbnails created for each large image, named with `_thumb` suffix.  
-3. Each sketch has a matching high resolution file and a thumbnail.  
-4. Decision matrix is included as XLSX and PDF.  
-5. CAD source files are zipped and include a README describing file types.  
-6. PowerPoint or PDF of ideation is included.  
-7. A single zipped bundle is created for quick download by graders.
-
----
-
-## Notes for maintainers
-
-- For best results, keep filenames simple and descriptive, for example `whiteboard_2026-02-03.png` or `concept_sketch_tank.png`.  
-- If a link 404s, confirm the file is in the repo and that you are using the `raw` URL format shown above.  
-- If files are large, consider adding them to a GitHub release and linking the release asset instead of committing very large files directly to the repo.
