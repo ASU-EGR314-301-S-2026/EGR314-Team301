@@ -335,3 +335,10 @@ The team selected this hybrid direction after evaluating feasibility, clarity du
 The primary tradeoff accepted in this decision was relying on an external laptop for visualization rather than embedding a dedicated screen. This increases portability requirements but significantly reduces hardware complexity and improves debugging capability during development.
 
 This combined approach allows the rover to remain modular, expandable, and realistic within the semester timeline while preserving the strongest ideas generated during concept development.
+
+
+
+## Resources
+Bryce's CAD ZIP can be downloaded [here.](https://github.com/user-attachments/files/25812168/314.Rover.Idea.BW_.Assembly.1_files.zip)
+
+
