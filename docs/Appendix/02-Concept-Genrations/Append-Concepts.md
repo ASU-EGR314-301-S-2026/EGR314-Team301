@@ -53,5 +53,7 @@ A single archive with the full concept generation artifacts
 ### CAD Project Files
 
 - Bryce's CAD for the concept generation 2 (ZIP): [Download CAD ZIP](https://github.com/user-attachments/files/25812187/314.Rover.Idea.BW_.Assembly.1_files.zip)
-- Tim's CAD for the concept generation 3 (ZIP): [Download CAD ZIP]
+- Tim's CAD for the concept generation 3 (ZIP): [Download CAD ZIP](https://github.com/user-attachments/files/25812525/Search.Tank.zip)
+
+
 
