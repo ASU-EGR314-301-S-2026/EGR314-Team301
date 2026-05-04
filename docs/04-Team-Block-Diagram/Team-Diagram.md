@@ -19,15 +19,27 @@ The final system uses MQTT as the main communication link between the user inter
 
 ---
 
+## Block Diagram Design Process
+
+The block diagram was structured to reflect both the physical hardware layout and the communication flow between subsystems. The team chose a modular node-based design so that each subsystem could be developed independently while still integrating into the overall system.
+
+A daisy-chain style communication structure was originally selected to reduce wiring complexity and simplify routing between boards. This approach also made it easier to trace message flow during debugging, since messages pass through nodes in a predictable order.
+
+During development, the design was adjusted to better match the actual implemented system. The gateway node became the central connection point for MQTT communication, while motor, sensor, and camera subsystems were separated into individual nodes. This allowed clearer mapping between team responsibilities, hardware layout, and software functionality.
+
+This final structure balances simplicity, modularity, and clarity, making it easier to both implement and explain.
+
+---
+
 ## Communication Architecture Rationale
 
 The team structured the communication system around simple, readable commands instead of a more complex packet system. This decision made the system easier to debug and better matched the final functions that were actually implemented.
 
 The most important user commands are:
 
-- `FWD` — move the rover forward
-- `REV` — move the rover in reverse
-- `STOP` — stop the rover
+- `FWD` — move the rover forward  
+- `REV` — move the rover in reverse  
+- `STOP` — stop the rover  
 
 These commands are received by the gateway and sent separately to both motor nodes. The humidity sensor and camera system use separate data paths so environmental data and camera output can be displayed to the user.
 
@@ -52,6 +64,18 @@ The block diagram supports the project requirements by separating the rover into
 The communication sequence supports the user needs by allowing the user to send simple movement commands and receive useful rover feedback. The user can command the rover to move forward, reverse, or stop, while also receiving humidity information and camera output through MQTT.
 
 ---
+
+## Design Iteration and Feedback Integration
+
+The block diagram and communication sequence diagram were updated throughout the project based on feedback from instructors and team reviews. Earlier versions of the design included a more complex communication protocol with additional message types, acknowledgements, and routing logic.
+
+Based on feedback and implementation challenges, the team simplified the communication system to focus on core functionality. Unused or unnecessary features such as complex telemetry requests and extended packet structures were removed. The diagrams were updated to reflect the actual system behavior rather than the originally proposed design.
+
+These changes improved clarity, reduced implementation complexity, and ensured that the final documentation accurately represents the working system.
+
+---
+
+## Sequence Diagram
 
 
 <br><br>
@@ -114,55 +138,55 @@ The final communication system uses simple command and data messages rather than
 | Debug sensor read | Button on `F` | `F` | Force an immediate humidity sensor reading |
 | Debug motor cycle | Button on `W` | `T` and `B` | Send test sequence: `FWD`, then `REV`, then `STOP` |
 
+---
+
 ## Communication Sequence Functionality and Requirements Alignment
 
-The communication sequence was designed to directly support the user’s primary interaction with the rover. The user sends a movement command through MQTT, and the gateway node receives that command and distributes it to both motor nodes. This allows the rover to respond quickly to user input with simple and predictable behavior.
+As shown in the sequence diagram above, the communication system is designed to minimize latency between user input and rover response. Commands are sent from the user through MQTT to the gateway, which immediately distributes them to the motor nodes. This ensures fast and predictable control of the rover.
 
-Separating the gateway from the motor nodes ensures that command handling and motor control are independent, which improves system reliability and makes debugging easier. If an issue occurs, it can be isolated to either communication or motor control rather than both.
+Separating command flow from sensor and camera data prevents interference between control and feedback systems. This allows high-bandwidth camera data to be transmitted without delaying critical motor commands.
 
-The humidity sensing path supports environmental monitoring requirements. The sensor node sends humidity data through the camera system, which then forwards the data to the gateway. The gateway publishes this information to MQTT so the user can see real-time environmental data.
+The humidity sensing path supports environmental monitoring requirements. The sensor node sends humidity data through the camera system, which forwards it to the gateway and then to MQTT for user display.
 
-The camera system provides visual feedback by publishing image data directly to MQTT. This improves usability by giving the user immediate confirmation of the rover’s surroundings and actions.
+The camera system provides visual feedback by publishing image data directly to MQTT, allowing the user to observe rover surroundings in real time.
 
-Debug functionality also supports system validation. The sensor node button allows immediate testing of sensor readings, while the gateway button allows direct testing of motor commands without relying on the web interface. These features helped ensure that each subsystem worked correctly during integration.
+Debug functionality supports system validation. The sensor node button allows immediate testing of sensor readings, while the gateway button allows direct testing of motor commands without requiring the full communication chain.
 
 ---
 
 ## Message Structure Design Process
 
-The original design used a structured packet-based protocol with defined message types, acknowledgements, error handling, and routing rules. While this approach was flexible, it introduced unnecessary complexity for the final system requirements.
+The original design used a structured packet-based protocol with defined message types, acknowledgements, error handling, and routing rules. While flexible, this approach introduced unnecessary complexity for the final system.
 
-During development, the team evaluated which features were actually needed. Since the rover primarily needed to move, report humidity, and stream camera data, the communication system was simplified to focus on those functions.
+The team evaluated system requirements and determined that only a small set of commands and data types were needed. Simplifying the communication structure reduced parsing complexity, improved reliability, and made debugging easier.
 
-Using simple commands such as `FWD`, `REV`, and `STOP` reduced the amount of parsing required on each node and made it easier to test communication paths. It also reduced the likelihood of bugs related to incorrect packet formatting or unused message fields.
-
-Separating command messages from sensor and camera data also improved clarity. Each subsystem handles only the messages relevant to its function, which simplifies both implementation and debugging.
+This decision prioritized ease of implementation and alignment with actual system functionality over extensibility that was not required for the final design.
 
 ---
 
 ## Top 5 Biggest Software Design Changes Since the Proposal
 
 1. **Simplification of the communication protocol**  
-   The original proposal included a detailed packet structure with message types, acknowledgements, error handling, telemetry requests, and configuration updates. During implementation, the team realized that many of these features were not necessary for the final system. The protocol was simplified to focus on essential commands (`FWD`, `REV`, `STOP`) and basic data transmission. This reduced complexity, improved reliability, and made debugging significantly easier.
+   As shown in the sequence diagram, the original packet-based system with ACKs, telemetry, and error handling was replaced with a simpler command-based approach. This reduced complexity and improved reliability.
 
 2. **Adoption of MQTT as the primary communication interface**  
-   The initial design considered more localized or custom communication methods. The final system uses MQTT as the primary interface between the user and the rover. This change improved flexibility by allowing commands and data to be transmitted over a standardized and widely supported protocol. It also made it easier to integrate the web interface and display real-time data.
+   The system now uses MQTT for all user interaction. This change improved flexibility and made it easier to integrate a web-based interface for control and monitoring.
 
 3. **Separation of motor control into independent nodes**  
-   Originally, motor control may have been more centralized or abstracted. In the final design, each motor is controlled by its own node. The gateway sends commands to both nodes independently, allowing each motor subsystem to operate and be tested separately. This improved modularity and made it easier to diagnose issues with individual motors.
+   The updated diagram shows that each motor is controlled by its own node. This improved modularity and allowed each motor system to be tested independently.
 
 4. **Modification of the sensor data path**  
-   The original design likely assumed a more direct path between the sensor and the gateway. In the final implementation, the humidity sensor sends data through the camera system before reaching the gateway. This reflects the actual hardware layout and communication wiring. Updating the design to match this structure ensured consistency between documentation and implementation.
+   The sequence diagram reflects that humidity data is routed through the camera system before reaching the gateway. This matches the final hardware configuration.
 
 5. **Addition of debug button functionality**  
-   Debugging features were added to improve testing and validation. The sensor node includes a button that forces a humidity reading, and the gateway includes a button that cycles through motor commands (`FWD`, `REV`, `STOP`). These additions allowed the team to test individual subsystems without relying on the full communication chain, which made integration faster and more reliable.
+   The diagram shows local button-triggered behavior. These features allowed testing of sensor readings and motor commands without relying on MQTT, improving development efficiency.
 
 ---
 
 ## Diagram Source Files
 
-* Editable block diagram source file: Download Draw.io Source
-* High resolution diagram image: Download PNG
-* Full diagram asset bundle ZIP: Download Assets
+* Editable block diagram source file: Download Draw.io Source  
+* High resolution diagram image: Download PNG  
+* Full diagram asset bundle ZIP: Download Assets  
 
 All diagram source files are stored in the repository so the block diagram can be edited, reproduced, and reviewed.
