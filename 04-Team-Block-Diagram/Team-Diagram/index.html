@@ -1170,7 +1170,7 @@
 
 <h2 id="team-block-diagram">Team Block Diagram</h2>
 <p>The following diagram illustrates the full team-level daisy-chain architecture including power distribution, ribbon cable connections, and microcontroller mappings.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/62da2312-c30a-455c-bd38-8be2a53e1861" data-desc-position="bottom"><img width="4771" height="1286" alt="TeamBlockDiagram301 drawio" src="https://github.com/user-attachments/assets/62da2312-c30a-455c-bd38-8be2a53e1861"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/4247bfab-6545-4630-acc0-ee39d92e26fe" data-desc-position="bottom"><img width="4582" height="1303" alt="TeamBlockDiagram301 drawio" src="https://github.com/user-attachments/assets/4247bfab-6545-4630-acc0-ee39d92e26fe"></a></p>
 <h2 id="system-architecture-overview">System Architecture Overview</h2>
 <p>The rover architecture is organized into modular functional nodes connected through the team communication system. Each node is responsible for a specific subsystem: gateway communication, drivetrain control, humidity sensing, and camera processing. This modular structure matches the team member responsibilities and allowed each subsystem to be developed and tested separately before integration.</p>
 <p>The final system uses MQTT as the main communication link between the user interface and the rover. User drive commands are sent through MQTT to the gateway node, which then sends direction commands to the two motor nodes. Sensor and camera information are sent back toward MQTT so the user can view rover status and environmental information.</p>
