@@ -6,7 +6,7 @@ tags:
 ---
 
 <center>
-<font size="8">MEG<br>
+<font size="8">MEG: Mobile Exploration Guide<br>
 <font size="5">Team 301<br>
 **Submission: May 04, 2026**<br>
 Spring - 2026<br>
