@@ -1306,74 +1306,33 @@
 <h2 id="sequence-diagram">Sequence Diagram</h2>
 <pre class="mermaid"><code>sequenceDiagram
     autonumber
-    participant WebUser
-    participant Riley as Riley Gateway (F)
-    participant Hattie as Hattie Sensors (H)
-    participant Rylee as Rylee Controller (W)
-    participant Bryce as Bryce Motor (B)
-    participant Tim as Tim Motor (T)
-    participant HMI as Local HMI
-    participant Logger as Logging Node
+    participant User as Web User
+    participant MQTT as MQTT Server
+    participant W as W - Rylee ESP32 Gateway
+    participant T as T - Tim Motor Node
+    participant B as B - Bryce Motor Node
+    participant F as F - Riley Sensor Node
+    participant H as H - Hattie Camera System
 
-    Note over WebUser,Riley: Web user issues a command via MQTT, Riley injects into ribbon
+    User-&gt;&gt;MQTT: Send drive command: FWD, STOP, or REV
+    MQTT-&gt;&gt;W: Deliver command
+    W-&gt;&gt;T: Send motor direction command
+    W-&gt;&gt;B: Send motor direction command
+    T-&gt;&gt;T: Apply FWD / STOP / REV
+    B-&gt;&gt;B: Apply FWD / STOP / REV
 
-    %% 1) Web driven, targeted SetSpeed to Tim
-    WebUser-&gt;&gt;Riley: MQTT SetSpeed dst:T type:0x0001 payload{motor:1,speed:150}
-    Riley-&gt;&gt;Hattie: FWD packet src:F dst:T type:SetSpeed
-    Hattie-&gt;&gt;Rylee: FWD packet src:F dst:T type:SetSpeed
-    Rylee-&gt;&gt;Bryce: FWD packet src:F dst:T type:SetSpeed
-    Bryce-&gt;&gt;Tim: FWD packet src:F dst:T type:SetSpeed
-    Note over Tim: Destination matches T, consume packet
-    Tim-&gt;&gt;Tim: Apply motor command
-    Tim--&gt;&gt;Bryce: ACK src:T dst:F type:0x0004 status:OK
-    Bryce--&gt;&gt;Rylee: FWD ACK
-    Rylee--&gt;&gt;Hattie: FWD ACK
-    Hattie--&gt;&gt;Riley: FWD ACK
-    Riley--&gt;&gt;WebUser: MQTT publish confirmation result:OK
+    F-&gt;&gt;H: Send humidity reading
+    H-&gt;&gt;W: Forward humidity data
+    W-&gt;&gt;MQTT: Publish humidity data
 
-    %% 2) In person HMI event at Rylee forwarded upstream for logging and action
-    HMI-&gt;&gt;Rylee: ButtonPress type:3
-    Rylee-&gt;&gt;Bryce: FWD packet src:W dst:B type:0x0043 button:3
-    Bryce-&gt;&gt;Tim: FWD packet
-    Note over Bryce,Tim: If motor nodes need to react they will, otherwise they forward upstream
-    Tim--&gt;&gt;Bryce: ACK if consumed
-    Bryce--&gt;&gt;Rylee: FWD ACK
-    Rylee-&gt;&gt;Riley: Publish event upstream for logging
-    Riley-&gt;&gt;Logger: Deliver button event for storage
+    H-&gt;&gt;MQTT: Publish camera image/data
+    MQTT-&gt;&gt;User: Display rover data
 
-    %% 3) Periodic telemetry, recurring sequence every 1s
-    loop every 1s
-        Hattie-&gt;&gt;Rylee: Telemetry src:H dst:F type:0x0003 {distance,motion,temp}
-        Rylee-&gt;&gt;Bryce: FWD telemetry
-        Bryce-&gt;&gt;Tim: FWD telemetry
-        Tim-&gt;&gt;Riley: FWD telemetry
-        Riley--&gt;&gt;WebUser: MQTT telemetry publish
-    end
-
-    %% 4) Broadcast request for status from WebUser
-    WebUser-&gt;&gt;Riley: MQTT Broadcast Request dst:X type:0x0002 mask:all
-    Riley-&gt;&gt;Hattie: Broadcast FWD src:F dst:X type:RequestTelemetry
-    Hattie-&gt;&gt;Rylee: Broadcast FWD
-    Rylee-&gt;&gt;Bryce: Broadcast FWD
-    Bryce-&gt;&gt;Tim: Broadcast FWD
-    Note over all: Each node that supports the requested fields replies upstream with Telemetry packets
-    Tim--&gt;&gt;Bryce: Telemetry reply
-    Bryce--&gt;&gt;Rylee: Telemetry reply
-    Rylee--&gt;&gt;Hattie: Telemetry reply
-    Hattie--&gt;&gt;Riley: Telemetry reply
-    Riley--&gt;&gt;WebUser: Aggregate and publish broadcast replies
-
-    %% 5) Example of a message tossed because of TTL expiry or malformed header
-    Riley-&gt;&gt;Hattie: FWD packet with TTL=0 type:0x0FFF config update
-    Hattie-&gt;&gt;Rylee: FWD packet TTL hits 0
-    Rylee--xRylee: Drop packet, send Error src:W dst:F type:0x0005 code:0x04
-    Rylee--&gt;&gt;Hattie: Error forward
-    Hattie--&gt;&gt;Riley: Error forward
-    Riley--&gt;&gt;WebUser: MQTT publish error notification
-
-    %% 6) Disposal example where an intermediate node consumes a message targeted at itself
-    Bryce-&gt;&gt;Tim: FWD packet src:B dst:B type:0x0001 local motor
-    Note over Tim: Packet dest equals node id, Tim consumes and does not forward</code></pre>
+    Note over F,W: Debug / manual testing
+    F-&gt;&gt;F: Button forces sensor read
+    W-&gt;&gt;W: Button cycles test commands
+    W-&gt;&gt;T: Send FWD → REV → STOP
+    W-&gt;&gt;B: Send FWD → REV → STOP</code></pre>
 <h2 id="message-types">Message Types</h2>
 <p>All packets follow the required 64 byte framing format:</p>
 <table>
