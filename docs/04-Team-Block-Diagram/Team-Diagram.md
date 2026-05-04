@@ -185,8 +185,6 @@ This decision prioritized ease of implementation and alignment with actual syste
 
 ## Diagram Source Files
 
-* Editable block diagram source file: Download Draw.io Source  
-* High resolution diagram image: Download PNG  
-* Full diagram asset bundle ZIP: Download Assets  
+* Editable block diagram source template: [Download Draw.io Template](https://embedded-systems-design.bitbucket.io/314/team-assignments/block-diagram-protocol-and-message-structure/314-spring-2025-block%20diagram-data.drawio)  
+* High resolution diagram image: [Download PNG](<img width="2081" height="461" alt="Team Block Diagram Template drawio" src="https://github.com/user-attachments/assets/c834964a-cf77-4144-846f-87573fb52fc8" />)
 
-All diagram source files are stored in the repository so the block diagram can be edited, reproduced, and reviewed.
