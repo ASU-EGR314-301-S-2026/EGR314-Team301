@@ -6,24 +6,15 @@ title: Appendix - Design Concepts
 
 This folder contains the whiteboard photos, high resolution sketches, decision matrices, CAD sources, and ideation PowerPoint files used during concept development. Please replace every example path below with the path to your actual files.
 
-### Whiteboard and Sketch Images
+### Whiteboard
 
-Full resolution images, for grading purposes:
+The zip file with our Google Sheets pages can be downloaded here. [Download Google Sheets pages](https://github.com/user-attachments/files/27376381/Concept.Generation.Sheets.zip)
 
-- Whiteboard session 1 (full resolution)  
-  [Download](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/Appendix/Concepts/whiteboard_session_1.png)  
-  Thumbnail:  
-  ![wb1_thumb](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/Appendix/Concepts/whiteboard_session_1_thumb.png){style="width:200px"}
-
-- Whiteboard session 2 (full resolution)  
-  [Download](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/Appendix/Concepts/whiteboard_session_2.png)  
-  Thumbnail:  
-  ![wb2_thumb](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/Appendix/Concepts/whiteboard_session_2_thumb.png){style="width:200px"}
 
 ### Concept Sketches
 
 - Concept sketch 1 ![Concept 1](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/docs/02-Concept-Design/EGR314_Project_Concept_Idea_51.png)
-[SVG File](https://github.com/user-attachments/assets/b7b1906a-8343-4c26-8758-0dd42206ff6f)
+- Vector image file for Concept Sketch 1: [SVG File](https://github.com/user-attachments/assets/b7b1906a-8343-4c26-8758-0dd42206ff6f)
 - Concept sketch 2 (PNG): [Download sketch 2](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/Appendix/Concepts/concept2.png)  
 - Concept sketch 3 (PNG): [Download sketch 3](https://github.com/ASU-EGR314-301-S-2026/EGR314-Team301/raw/main/Appendix/Concepts/concept3.png)
 
