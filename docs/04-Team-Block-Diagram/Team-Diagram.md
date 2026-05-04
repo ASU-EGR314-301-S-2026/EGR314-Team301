@@ -13,47 +13,46 @@ The following diagram illustrates the full team-level daisy-chain architecture i
 
 ## System Architecture Overview
 
-The rover architecture is organized into modular functional nodes connected in a daisy-chain communication structure. Each node is responsible for a clearly defined subsystem, including controller input, drivetrain control, environmental sensing, camera processing, and gateway communication. This modular grouping aligns with team member ownership and allows hardware and firmware development to occur in parallel while maintaining clean integration boundaries.
+The rover architecture is organized into modular functional nodes connected through the team communication system. Each node is responsible for a specific subsystem: gateway communication, drivetrain control, humidity sensing, and camera processing. This modular structure matches the team member responsibilities and allowed each subsystem to be developed and tested separately before integration.
 
-The daisy-chain structure was selected to simplify physical wiring and reduce routing complexity between distributed boards. Rather than implementing a fully connected bus, each node forwards messages downstream unless the destination address matches its own node ID. This reduces the number of required communication lines while preserving deterministic routing behavior.
+The final system uses MQTT as the main communication link between the user interface and the rover. User drive commands are sent through MQTT to the gateway node, which then sends direction commands to the two motor nodes. Sensor and camera information are sent back toward MQTT so the user can view rover status and environmental information.
 
 ---
 
 ## Communication Architecture Rationale
 
-The team selected a structured packet-based communication protocol with explicit source and destination addressing to ensure reliable message routing and traceability. Each message includes a source ID, destination ID, message type, and payload, allowing commands, telemetry, acknowledgements, and error reporting to coexist within a single unified format.
+The team structured the communication system around simple, readable commands instead of a more complex packet system. This decision made the system easier to debug and better matched the final functions that were actually implemented.
 
-A daisy-chain forwarding model was chosen over broadcast-only or peer-to-peer architectures to:
+The most important user commands are:
 
-- Minimize wiring complexity
-- Simplify debugging by preserving packet order
-- Enable deterministic routing and TTL handling
-- Maintain compatibility with class framing requirements
+- `FWD` — move the rover forward
+- `REV` — move the rover in reverse
+- `STOP` — stop the rover
 
-The use of ACK and error packets improves reliability and supports traceable debugging during integration and demonstration.
+These commands are received by the gateway and sent separately to both motor nodes. The humidity sensor and camera system use separate data paths so environmental data and camera output can be displayed to the user.
+
+This structure was selected because it supports the main product requirements while keeping the communication system simple enough to integrate and troubleshoot during the semester.
 
 ---
 
 ## Power Architecture and Isolation
 
-Power is distributed from the central battery system and regulated locally at each subsystem as required. Logic-level devices operate at regulated voltage levels appropriate for microcontrollers and sensors, while drivetrain components draw higher current from the primary supply rail.
+For the final demonstration, the rover uses wall power instead of a battery system. This choice made testing and demonstration more reliable because the team did not need to manage battery charge level, runtime limits, or voltage drop during repeated testing.
 
-Separating logic regulation from motor power reduces electrical noise coupling and minimizes the risk of brownout events when motors experience load spikes. This power segmentation improves overall system reliability and aligns with project requirements for stable communication, sensor accuracy, and safe operation.
+In a larger production version, a battery would be more appropriate because the rover would need to operate untethered. However, for the class demonstration, wall power provides a stable supply and reduces the chance of power-related failures while still allowing the team to demonstrate the communication, sensing, camera, and motor-control functions.
+
+Power is still separated by subsystem as needed. Logic-level devices operate at regulated voltage levels appropriate for microcontrollers and sensors, while motor components use the power level required for drivetrain operation. Keeping these functions separated helps reduce electrical noise and improves reliability during motor startup, stopping, and direction changes.
 
 ---
 
 ## Requirements Alignment
 
-The block diagram directly supports the measurable system requirements defined in the Project Requirements section. Modular node separation enables independent verification of drivetrain mobility, environmental sensing accuracy, wireless communication range, and controller responsiveness.
+The block diagram supports the project requirements by separating the rover into clear functional subsystems. The motor nodes support rover movement, the sensor node supports environmental sensing, the camera system supports user visibility, and the gateway connects the rover to MQTT.
 
-The structured communication protocol ensures:
+The communication sequence supports the user needs by allowing the user to send simple movement commands and receive useful rover feedback. The user can command the rover to move forward, reverse, or stop, while also receiving humidity information and camera output through MQTT.
 
-- Reliable wireless command transmission
-- Deterministic telemetry reporting
-- Rapid emergency stop propagation
-- Clear error reporting and debugging support
+---
 
-The power segmentation strategy supports runtime duration requirements and protects subsystem stability during load variation. Overall, the architecture was intentionally structured to satisfy reliability, safety, and expandability requirements while remaining achievable within the semester timeline.
 
 <br><br>
 ## Sequence Diagram
@@ -88,177 +87,77 @@ sequenceDiagram
     W->>T: Send FWD → REV → STOP
     W->>B: Send FWD → REV → STOP
 ```
-## Message Types
-
-All packets follow the required 64 byte framing format:
-
-| Byte | Description |
-|---|---|
-| 0 | `0x41` |
-| 1 | `0x5A` |
-| 2 | Source ID (`uint8_t`) |
-| 3 | Destination ID (`uint8_t`) |
-| 4 to 61 | Message, variable length <= 58 bytes |
-| 62 | `0x59` |
-| 63 | `0x42` |
-
-Within bytes 4 to 61:
-
-* Bytes 4 to 5 = Message Type (`uint16_t`, big endian)
-* Remaining bytes = Message specific payload
-
-All multi byte values use big endian format.  
-All strings must be null terminated (`0x00`).
 
 ## Node IDs
 
-| Node | ID |
-|---|---|
-| Riley Gateway | `F` |
-| Hattie Camera / Sensors | `H` |
-| Rylee Controller Input | `W` |
-| Bryce Motor Node | `B` |
-| Tim Motor Node | `T` |
-| Broadcast | `X` |
+| Node ID | Team Member / Subsystem | Function |
+|---|---|---|
+| `W` | Rylee ESP32 Gateway | Receives MQTT commands and sends motor commands |
+| `T` | Tim Motor Node | Controls one motor |
+| `B` | Bryce Motor Node | Controls one motor |
+| `F` | Riley Sensor Node | Reads humidity sensor data |
+| `H` | Hattie Camera System | Handles camera output and forwards humidity data |
 
-## Addressing Scheme
+---
 
-Each node in the system is assigned a unique 8 bit identifier. The Source ID field identifies the originating node, while the Destination ID field identifies the intended recipient.
+## Message Structure
 
-If the Destination ID matches the local node ID, the packet is consumed and processed. If the Destination ID is `X`, the packet is treated as a broadcast message and forwarded by all nodes. Otherwise, the packet is forwarded downstream according to routing rules.
+The final communication system uses simple command and data messages rather than the originally proposed complex message protocol. This helped reduce integration problems and made the system easier to test.
 
-This addressing scheme ensures deterministic routing behavior and supports both targeted commands and broadcast telemetry requests.
+| Message / Data | Source | Destination | Purpose |
+|---|---|---|---|
+| `FWD` | MQTT / `W` | `T` and `B` | Command both motor nodes to move forward |
+| `REV` | MQTT / `W` | `T` and `B` | Command both motor nodes to move in reverse |
+| `STOP` | MQTT / `W` | `T` and `B` | Stop both motor nodes |
+| Humidity reading | `F` | `H`, then `W` / MQTT | Send environmental humidity data to the user |
+| Camera image/data | `H` | MQTT | Send camera output to the user interface |
+| Debug sensor read | Button on `F` | `F` | Force an immediate humidity sensor reading |
+| Debug motor cycle | Button on `W` | `T` and `B` | Send test sequence: `FWD`, then `REV`, then `STOP` |
 
-## Message Types
+## Communication Sequence Functionality and Requirements Alignment
 
-### `0x0001` — Set Motor Speed
+The communication sequence was designed to directly support the user’s primary interaction with the rover. The user sends a movement command through MQTT, and the gateway node receives that command and distributes it to both motor nodes. This allows the rover to respond quickly to user input with simple and predictable behavior.
 
-**Description:** Command a motor controller to set speed and direction.
+Separating the gateway from the motor nodes ensures that command handling and motor control are independent, which improves system reliability and makes debugging easier. If an issue occurs, it can be isolated to either communication or motor control rather than both.
 
-| Byte | Field |
-|---|---|
-| 4 | `0x00` |
-| 5 | `0x01` |
-| 6 | Motor ID (`uint8_t`) |
-| 7 | Speed High (`uint8_t`) |
-| 8 | Speed Low (`uint8_t`) |
-| 9 | Direction (`0 = FWD`, `1 = REV`) |
-| 10 | Control Flags (`uint8_t`) |
-| 11 to 61 | Reserved |
+The humidity sensing path supports environmental monitoring requirements. The sensor node sends humidity data through the camera system, which then forwards the data to the gateway. The gateway publishes this information to MQTT so the user can see real-time environmental data.
 
-### `0x0002` — Request Telemetry
+The camera system provides visual feedback by publishing image data directly to MQTT. This improves usability by giving the user immediate confirmation of the rover’s surroundings and actions.
 
-**Description:** Request telemetry from a specific node or broadcast to all nodes.
+Debug functionality also supports system validation. The sensor node button allows immediate testing of sensor readings, while the gateway button allows direct testing of motor commands without relying on the web interface. These features helped ensure that each subsystem worked correctly during integration.
 
-| Byte | Field |
-|---|---|
-| 4 | `0x00` |
-| 5 | `0x02` |
-| 6 | Telemetry Mask (`uint8_t`) |
-| 7 | Timeout in seconds (`uint8_t`) |
-| 8 to 61 | Reserved |
+---
 
-Telemetry Mask Bits:
+## Message Structure Design Process
 
-* bit0 = Distance
-* bit1 = Motion
-* bit2 = Temperature
-* bit3 = Hall sensor
-* bit4 = Motor RPM
+The original design used a structured packet-based protocol with defined message types, acknowledgements, error handling, and routing rules. While this approach was flexible, it introduced unnecessary complexity for the final system requirements.
 
-### `0x0003` — Telemetry Packet
+During development, the team evaluated which features were actually needed. Since the rover primarily needed to move, report humidity, and stream camera data, the communication system was simplified to focus on those functions.
 
-**Description:** Sensor and system status data.
+Using simple commands such as `FWD`, `REV`, and `STOP` reduced the amount of parsing required on each node and made it easier to test communication paths. It also reduced the likelihood of bugs related to incorrect packet formatting or unused message fields.
 
-| Byte | Field |
-|---|---|
-| 4 | `0x00` |
-| 5 | `0x03` |
-| 6 to 7 | Distance (`uint16_t`, mm) |
-| 8 | Motion (`uint8_t`, 0 or 1) |
-| 9 to 10 | Temperature (`int16_t`, tenths °C) |
-| 11 to 12 | Motor RPM (`uint16_t`) |
-| 13 | Status Flags (`uint8_t`) |
-| 14 to 61 | Reserved |
+Separating command messages from sensor and camera data also improved clarity. Each subsystem handles only the messages relevant to its function, which simplifies both implementation and debugging.
 
-Status Flags:
+---
 
-* bit0 = Motor running
-* bit1 = Error present
-* bit2 = Low battery
+## Top 5 Biggest Software Design Changes Since the Proposal
 
-### `0x0004` — ACK
+1. **Simplification of the communication protocol**  
+   The original proposal included a detailed packet structure with message types, acknowledgements, error handling, telemetry requests, and configuration updates. During implementation, the team realized that many of these features were not necessary for the final system. The protocol was simplified to focus on essential commands (`FWD`, `REV`, `STOP`) and basic data transmission. This reduced complexity, improved reliability, and made debugging significantly easier.
 
-**Description:** Acknowledge receipt and execution of a command.
+2. **Adoption of MQTT as the primary communication interface**  
+   The initial design considered more localized or custom communication methods. The final system uses MQTT as the primary interface between the user and the rover. This change improved flexibility by allowing commands and data to be transmitted over a standardized and widely supported protocol. It also made it easier to integrate the web interface and display real-time data.
 
-| Byte | Field |
-|---|---|
-| 4 | `0x00` |
-| 5 | `0x04` |
-| 6 | Acked Message Type high byte |
-| 7 | Acked Message Type low byte |
-| 8 | Status (`0 = OK`, `1 = ERROR`) |
-| 9 | Error Code |
-| 10 to 61 | Optional null terminated text |
+3. **Separation of motor control into independent nodes**  
+   Originally, motor control may have been more centralized or abstracted. In the final design, each motor is controlled by its own node. The gateway sends commands to both nodes independently, allowing each motor subsystem to operate and be tested separately. This improved modularity and made it easier to diagnose issues with individual motors.
 
-### `0x0005` — Error / Event Log
+4. **Modification of the sensor data path**  
+   The original design likely assumed a more direct path between the sensor and the gateway. In the final implementation, the humidity sensor sends data through the camera system before reaching the gateway. This reflects the actual hardware layout and communication wiring. Updating the design to match this structure ensured consistency between documentation and implementation.
 
-**Description:** Error reporting and diagnostic message.
+5. **Addition of debug button functionality**  
+   Debugging features were added to improve testing and validation. The sensor node includes a button that forces a humidity reading, and the gateway includes a button that cycles through motor commands (`FWD`, `REV`, `STOP`). These additions allowed the team to test individual subsystems without relying on the full communication chain, which made integration faster and more reliable.
 
-| Byte | Field |
-|---|---|
-| 4 | `0x00` |
-| 5 | `0x05` |
-| 6 | Error Code |
-| 7 | Severity (`0 = info`, `1 = warn`, `2 = error`, `3 = fatal`) |
-| 8 to 61 | Null terminated ASCII string |
-
-### `0x0043` — Button Press
-
-**Description:** Local HMI button event.
-
-| Byte | Field |
-|---|---|
-| 4 | `0x00` |
-| 5 | `0x43` |
-| 6 | Button ID (`uint8_t`) |
-| 7 | Press Type (`0 = short`, `1 = long`, `2 = double`) |
-| 8 | Debounce / Sequence (`uint8_t`) |
-| 9 to 61 | Optional null terminated text |
-
-### `0x0FFF` — Config Update
-
-**Description:** Configuration update message.
-
-| Byte | Field |
-|---|---|
-| 4 | `0x0F` |
-| 5 | `0xFF` |
-| 6 | Config ID (`uint8_t`) |
-| 7 | Data Length (`uint8_t`) |
-| 8 to (8 + N - 1) | Config Data |
-| Remaining | Reserved |
-
-## Error Codes
-
-| Code | Meaning |
-|---|---|
-| `0x01` | Motor not found |
-| `0x02` | Invalid parameter |
-| `0x03` | Overcurrent |
-| `0x04` | TTL expired |
-| `0x05` | Destination unreachable |
-| `0x06` | CRC failure |
-| `0x07` | Unsupported message type |
-| `0x08` | Resource busy |
-
-## Routing Rules
-
-1. If Destination ID equals local node ID, consume packet.
-2. If Destination ID equals `X`, broadcast and optionally respond.
-3. Otherwise, forward to downstream neighbor.
-4. ACK messages must be routed back to the Source ID.
-5. Preserve bytes 0 to 3 and 62 to 63 unchanged when forwarding.
+---
 
 ## Diagram Source Files
 
@@ -266,6 +165,4 @@ Status Flags:
 * High resolution diagram image: Download PNG
 * Full diagram asset bundle ZIP: Download Assets
 
-All diagram source files are stored in the Appendix to ensure reproducibility and transparency of system design.
-
-This document defines the canonical team message protocol and must be implemented consistently across all boards.
+All diagram source files are stored in the repository so the block diagram can be edited, reproduced, and reviewed.
