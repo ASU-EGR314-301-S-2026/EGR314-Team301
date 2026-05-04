@@ -60,74 +60,33 @@ The power segmentation strategy supports runtime duration requirements and prote
 ```mermaid
 sequenceDiagram
     autonumber
-    participant WebUser
-    participant Riley as Riley Gateway (F)
-    participant Hattie as Hattie Sensors (H)
-    participant Rylee as Rylee Controller (W)
-    participant Bryce as Bryce Motor (B)
-    participant Tim as Tim Motor (T)
-    participant HMI as Local HMI
-    participant Logger as Logging Node
+    participant User as Web User
+    participant MQTT as MQTT Server
+    participant W as W - Rylee ESP32 Gateway
+    participant T as T - Tim Motor Node
+    participant B as B - Bryce Motor Node
+    participant F as F - Riley Sensor Node
+    participant H as H - Hattie Camera System
 
-    Note over WebUser,Riley: Web user issues a command via MQTT, Riley injects into ribbon
+    User->>MQTT: Send drive command: FWD, STOP, or REV
+    MQTT->>W: Deliver command
+    W->>T: Send motor direction command
+    W->>B: Send motor direction command
+    T->>T: Apply FWD / STOP / REV
+    B->>B: Apply FWD / STOP / REV
 
-    %% 1) Web driven, targeted SetSpeed to Tim
-    WebUser->>Riley: MQTT SetSpeed dst:T type:0x0001 payload{motor:1,speed:150}
-    Riley->>Hattie: FWD packet src:F dst:T type:SetSpeed
-    Hattie->>Rylee: FWD packet src:F dst:T type:SetSpeed
-    Rylee->>Bryce: FWD packet src:F dst:T type:SetSpeed
-    Bryce->>Tim: FWD packet src:F dst:T type:SetSpeed
-    Note over Tim: Destination matches T, consume packet
-    Tim->>Tim: Apply motor command
-    Tim-->>Bryce: ACK src:T dst:F type:0x0004 status:OK
-    Bryce-->>Rylee: FWD ACK
-    Rylee-->>Hattie: FWD ACK
-    Hattie-->>Riley: FWD ACK
-    Riley-->>WebUser: MQTT publish confirmation result:OK
+    F->>H: Send humidity reading
+    H->>W: Forward humidity data
+    W->>MQTT: Publish humidity data
 
-    %% 2) In person HMI event at Rylee forwarded upstream for logging and action
-    HMI->>Rylee: ButtonPress type:3
-    Rylee->>Bryce: FWD packet src:W dst:B type:0x0043 button:3
-    Bryce->>Tim: FWD packet
-    Note over Bryce,Tim: If motor nodes need to react they will, otherwise they forward upstream
-    Tim-->>Bryce: ACK if consumed
-    Bryce-->>Rylee: FWD ACK
-    Rylee->>Riley: Publish event upstream for logging
-    Riley->>Logger: Deliver button event for storage
+    H->>MQTT: Publish camera image/data
+    MQTT->>User: Display rover data
 
-    %% 3) Periodic telemetry, recurring sequence every 1s
-    loop every 1s
-        Hattie->>Rylee: Telemetry src:H dst:F type:0x0003 {distance,motion,temp}
-        Rylee->>Bryce: FWD telemetry
-        Bryce->>Tim: FWD telemetry
-        Tim->>Riley: FWD telemetry
-        Riley-->>WebUser: MQTT telemetry publish
-    end
-
-    %% 4) Broadcast request for status from WebUser
-    WebUser->>Riley: MQTT Broadcast Request dst:X type:0x0002 mask:all
-    Riley->>Hattie: Broadcast FWD src:F dst:X type:RequestTelemetry
-    Hattie->>Rylee: Broadcast FWD
-    Rylee->>Bryce: Broadcast FWD
-    Bryce->>Tim: Broadcast FWD
-    Note over all: Each node that supports the requested fields replies upstream with Telemetry packets
-    Tim-->>Bryce: Telemetry reply
-    Bryce-->>Rylee: Telemetry reply
-    Rylee-->>Hattie: Telemetry reply
-    Hattie-->>Riley: Telemetry reply
-    Riley-->>WebUser: Aggregate and publish broadcast replies
-
-    %% 5) Example of a message tossed because of TTL expiry or malformed header
-    Riley->>Hattie: FWD packet with TTL=0 type:0x0FFF config update
-    Hattie->>Rylee: FWD packet TTL hits 0
-    Rylee--xRylee: Drop packet, send Error src:W dst:F type:0x0005 code:0x04
-    Rylee-->>Hattie: Error forward
-    Hattie-->>Riley: Error forward
-    Riley-->>WebUser: MQTT publish error notification
-
-    %% 6) Disposal example where an intermediate node consumes a message targeted at itself
-    Bryce->>Tim: FWD packet src:B dst:B type:0x0001 local motor
-    Note over Tim: Packet dest equals node id, Tim consumes and does not forward
+    Note over F,W: Debug / manual testing
+    F->>F: Button forces sensor read
+    W->>W: Button cycles test commands
+    W->>T: Send FWD → REV → STOP
+    W->>B: Send FWD → REV → STOP
 ```
 ## Message Types
 
