@@ -5,10 +5,7 @@ title: Block Diagram, Protocol, and Message Structure
 ## Team Block Diagram
 The following diagram illustrates the full team-level daisy-chain architecture including power distribution, ribbon cable connections, and microcontroller mappings.
 
-
-<img width="4771" height="1286" alt="TeamBlockDiagram301 drawio" src="https://github.com/user-attachments/assets/62da2312-c30a-455c-bd38-8be2a53e1861" />
-
-
+<img width="4582" height="1303" alt="TeamBlockDiagram301 drawio" src="https://github.com/user-attachments/assets/4247bfab-6545-4630-acc0-ee39d92e26fe" />
 
 
 ## System Architecture Overview
