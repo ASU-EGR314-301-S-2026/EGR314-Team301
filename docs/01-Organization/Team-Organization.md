@@ -6,7 +6,7 @@ tags:
 
 ## Team Charter
 
-Our team of ASU student engineers is committed to collaboration, creativity, and the application of technical knowledge. Using GitHub, electrical components, and hands-on system design, we will deliver a functional portfolio-worthy product that reflects our engineering growth. We strive to make an affordable and highly useful product that represents our knowledge and talents.
+> Our team of ASU student engineers is committed to collaboration, creativity, and the application of technical knowledge. Using GitHub, electrical components, and hands-on system design, we will deliver a functional portfolio-worthy product that reflects our engineering growth. We strive to make an affordable and highly useful product that represents our knowledge and talents.
 
 Our team created this charter to define our shared values and goals for delivering a creative, demonstrable, and semi-functional product.
 
@@ -14,7 +14,7 @@ Our team created this charter to define our shared values and goals for deliveri
 
 ## Product Mission Statement
 
-Our team is committed to designing and implementing an affordable and accessible exploration rover for residential and commercial use that emphasizes reliability, modularity, and structured system design.
+> Our team is committed to designing and implementing an affordable and accessible exploration rover for residential and commercial use that emphasizes reliability, modularity, and structured system design.
 
 ---
 
