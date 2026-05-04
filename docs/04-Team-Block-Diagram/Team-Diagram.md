@@ -133,7 +133,7 @@ The final communication system uses simple command and data messages rather than
 | `FWD` | MQTT / `W` | `T` and `B` | Command both motor nodes to move forward |
 | `REV` | MQTT / `W` | `T` and `B` | Command both motor nodes to move in reverse |
 | `STOP` | MQTT / `W` | `T` and `B` | Stop both motor nodes |
-| Humidity reading | `F` | `H`, then `W` / MQTT | Send environmental humidity data to the user |
+| Humidity reading | `F` | `W` / MQTT | Send environmental humidity data to the user |
 | Camera image/data | `H` | MQTT | Send camera output to the user interface |
 | Debug sensor read | Button on `F` | `F` | Force an immediate humidity sensor reading |
 | Debug motor cycle | Button on `W` | `T` and `B` | Send test sequence: `FWD`, then `REV`, then `STOP` |
