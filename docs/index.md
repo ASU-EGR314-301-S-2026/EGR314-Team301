@@ -16,6 +16,10 @@ Kevin Nichols<br>
 </center>
 
 ---
+<img width="798" height="660" alt="Screenshot 2026-05-04 at 12 00 25 PM" src="https://github.com/user-attachments/assets/8ce52ea1-ce6b-476f-a49a-1b5462bf9520" />
+
+## Project Summary
+Our team has developed a functional prototype for a modular exploration rover designed for data collection and navigation in an environment. The prototype has mobility, environmental sensing, and imaging by combining two working motors, a humidity sensor, an onboard camera, and Wi-Fi communication. Our engineering process prioritized structured system design and clear communication between modules.
 
 ## Team Introduction
 
