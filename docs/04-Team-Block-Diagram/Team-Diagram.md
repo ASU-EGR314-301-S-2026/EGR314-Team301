@@ -179,9 +179,3 @@ This decision prioritized ease of implementation and alignment with actual syste
    The diagram shows local button-triggered behavior. These features allowed testing of sensor readings and motor commands without relying on MQTT, improving development efficiency.
 
 ---
-
-## Diagram Source Files
-
-* Editable block diagram source template: [Download Draw.io Template](https://embedded-systems-design.bitbucket.io/314/team-assignments/block-diagram-protocol-and-message-structure/314-spring-2025-block%20diagram-data.drawio)  
-* High resolution diagram image: [Download PNG](<img width="2081" height="461" alt="Team Block Diagram Template drawio" src="https://github.com/user-attachments/assets/c834964a-cf77-4144-846f-87573fb52fc8" />)
-
